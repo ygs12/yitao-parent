@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.gerry.yitao</groupId>
+    <artifactId>yitao-parent</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>yitao-domain</module>
+        <module>yitao-common</module>
+        <module>yitao-mapper</module>
+        <module>yitao-seller-service</module>
+        <module>yitao-seller-interface</module>
+        <module>yitao-seller-webapi</module>
+        <module>yitao-upload-interface</module>
+        <module>yitao-upload-service</module>
+        <module>yitao-upload-webapi</module>
+    </modules>
+
+    <properties>
+        <main.basedir>${project.basedir}</main.basedir>
+        <commons-lang3-version>3.7</commons-lang3-version>
+        <dubbo-starter-version>0.2.0</dubbo-starter-version>
+        <spring-boot-mybtis-version>1.3.2</spring-boot-mybtis-version>
+        <tk-mybatis-version>2.0.4</tk-mybatis-version>
+        <lombok-version>1.18.6</lombok-version>
+        <curator-version>2.12.0</curator-version>
+        <fastjson-version>1.2.46</fastjson-version>
+        <jackson-verison>2.9.8</jackson-verison>
+        <springfox-swagger-version>2.9.2</springfox-swagger-version>
+        <netty-version>4.1.30.Final</netty-version>
+        <jedis-version>2.9.0</jedis-version>
+        <spring-boot-version>2.1.4.RELEASE</spring-boot-version>
+        <elasticsearch.version>7.0.0</elasticsearch.version>
+        <maven_compiler_version>3.6.0</maven_compiler_version>
+        <java_source_version>1.8</java_source_version>
+        <java_target_version>1.8</java_target_version>
+        <file_encoding>UTF-8</file_encoding>
+        <servlet-verison>3.1.0</servlet-verison>
+        <java.jpa.version></java.jpa.version>
+        <druid-version>1.1.10</druid-version>
+        <pagehelper-version>1.2.3</pagehelper-version>
+        <fastdfs-version>1.26.1-RELEASE</fastdfs-version>
+        <yitao-version>1.0-SNAPSHOT</yitao-version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.gerry.yitao</groupId>
+                <artifactId>yitao-domain</artifactId>
+                <version>${yitao-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.gerry.yitao</groupId>
+                <artifactId>yitao-common</artifactId>
+                <version>${yitao-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.gerry.yitao</groupId>
+                <artifactId>yitao-mapper</artifactId>
+                <version>${yitao-version}</version>
+            </dependency>
+
+
+            <dependency>
+                <groupId>com.gerry.yitao</groupId>
+                <artifactId>yitao-seller-interface</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.gerry.yitao</groupId>
+                <artifactId>yitao-upload-interface</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <!--/////////////////////////////////////////////////-->
+
+            <dependency>
+                <groupId>javax.persistence</groupId>
+                <artifactId>persistence-api</artifactId>
+                <version>1.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-parent</artifactId>
+                <version>${spring-boot-version}</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <dependency>
+                <groupId>redis.clients</groupId>
+                <artifactId>jedis</artifactId>
+                <version>${jedis-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mybatis.spring.boot</groupId>
+                <artifactId>mybatis-spring-boot-starter</artifactId>
+                <version>${spring-boot-mybtis-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>tk.mybatis</groupId>
+                <artifactId>mapper-spring-boot-starter</artifactId>
+                <version>${tk-mybatis-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.boot</groupId>
+                <artifactId>dubbo-spring-boot-starter</artifactId>
+                <version>${dubbo-starter-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>fastjson</artifactId>
+                <version>${fastjson-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.fasterxml.jackson.core</groupId>
+                <artifactId>jackson-databind</artifactId>
+                <version>${jackson-verison}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${springfox-swagger-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${springfox-swagger-version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty-version}</version>
+            </dependency>
+
+            <!--引入Log4j2依赖-->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter</artifactId>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.springframework.boot</groupId>
+                        <artifactId>spring-boot-starter-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+
+            <!--mybatis结合的分页插件pagehelper-->
+            <dependency>
+                <groupId>com.github.pagehelper</groupId>
+                <artifactId>pagehelper-spring-boot-starter</artifactId>
+                <version>${pagehelper-version}</version>
+            </dependency>
+
+            <!--FastDFS客户端-->
+            <dependency>
+                <groupId>com.github.tobato</groupId>
+                <artifactId>fastdfs-client</artifactId>
+                <version>${fastdfs-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>${servlet-verison}</version>
+                <scope>provided</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven_compiler_version}</version>
+                <configuration>
+                    <source>${java_source_version}</source>
+                    <target>${java_target_version}</target>
+                    <encoding>${file_encoding}</encoding>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

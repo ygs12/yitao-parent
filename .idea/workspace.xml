@@ -1,0 +1,1301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="7b6fdad1-331b-44cd-9287-3ca0f84f06de" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/out/" />
+    <ignored path="$PROJECT_DIR$/target/" />
+    <ignored path="$PROJECT_DIR$/yitao-pojo/target/" />
+    <ignored path="$PROJECT_DIR$/yitao-domain/target/" />
+    <ignored path="$PROJECT_DIR$/yitao-common/target/" />
+    <ignored path="$PROJECT_DIR$/yitao-mapper/target/" />
+    <ignored path="$PROJECT_DIR$/yitao-seller-service/target/" />
+    <ignored path="$PROJECT_DIR$/yitao-seller-interface/target/" />
+    <ignored path="$PROJECT_DIR$/yitao-seller-webapi/target/" />
+    <ignored path="$PROJECT_DIR$/yitao-upload-interface/target/" />
+    <ignored path="$PROJECT_DIR$/yitao-upload-service/target/" />
+    <ignored path="$PROJECT_DIR$/yitao-upload-webapi/target/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost111" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost111" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost111" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="orange: schema" type="c314c289:MysqlImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost111" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="orange: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost111" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="orange: schema" type="c314c289:MysqlImplModel$Schema" />
+        <item name="tables" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="tb_order_status: table" type="98d5ac3d:MysqlImplModel$Table" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1737129485">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="8" />
+          <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.11" value="1" />
+          <entry key="project.open.time.14" value="1" />
+          <entry key="project.open.time.2" value="1" />
+          <entry key="project.open.time.20" value="1" />
+          <entry key="project.open.time.3" value="1" />
+          <entry key="project.open.time.4" value="1" />
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="10" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="conf" value="9" />
+          <entry key="dummy" value="27" />
+          <entry key="gitignore" value="17" />
+          <entry key="java" value="5785" />
+          <entry key="properties" value="19" />
+          <entry key="txt" value="137" />
+          <entry key="xml" value="1491" />
+          <entry key="yml" value="384" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="Git file" value="17" />
+          <entry key="HOCON" value="4" />
+          <entry key="JAVA" value="5785" />
+          <entry key="PLAIN_TEXT" value="169" />
+          <entry key="Properties" value="19" />
+          <entry key="XML" value="1491" />
+          <entry key="YAML" value="384" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="class" value="31" />
+          <entry key="conf" value="5" />
+          <entry key="exclude" value="1" />
+          <entry key="gitignore" value="4" />
+          <entry key="java" value="654" />
+          <entry key="json" value="3" />
+          <entry key="md" value="3" />
+          <entry key="properties" value="5" />
+          <entry key="sql" value="2" />
+          <entry key="tb_category" value="1" />
+          <entry key="tb_category_brand" value="1" />
+          <entry key="tb_order_status" value="1" />
+          <entry key="xml" value="115" />
+          <entry key="yml" value="49" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CLASS" value="31" />
+          <entry key="Database Element" value="3" />
+          <entry key="Git exclude file" value="1" />
+          <entry key="Git file" value="4" />
+          <entry key="HOCON" value="2" />
+          <entry key="JAVA" value="654" />
+          <entry key="JSON" value="3" />
+          <entry key="Markdown" value="3" />
+          <entry key="PLAIN_TEXT" value="3" />
+          <entry key="Properties" value="5" />
+          <entry key="Scratch" value="2" />
+          <entry key="XML" value="115" />
+          <entry key="YAML" value="49" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="yitao-parent" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/yitao-common/src/main/java/com/gerry/yitao/common/upload/FastdfsClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-152">
+              <caret line="41" column="62" lean-forward="true" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="62" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>mapper</find>
+      <find>@Mapper</find>
+      <find>\/\*\*\n \* \@author bystander\n \* \@date 2018\/9\/15\n \*\/</find>
+      <find>\/\*\*\n \* \@author bystander\n \* \@date 2018\/9\/18\n \*\/</find>
+      <find>corsFilter</find>
+      <find>cors</find>
+      <find>hessian</find>
+      <find>delete</find>
+    </findStrings>
+    <replaceStrings>
+      <replace />
+    </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/yitao-mapper/src/main/java/com/gerry/yitao/mapper/BrandMapper.java" />
+        <option value="$PROJECT_DIR$/yitao-seller-interface/pom.xml" />
+        <option value="$PROJECT_DIR$/yitao-seller-interface/src/main/java/com/gerry/yitao/service/CategoryService.java" />
+        <option value="$PROJECT_DIR$/yitao-seller-interface/src/main/java/com/gerry/yitao/service/SpecService.java" />
+        <option value="$PROJECT_DIR$/yitao-seller-interface/src/main/java/com/gerry/yitao/service/GoodsService.java" />
+        <option value="$PROJECT_DIR$/yitao-seller-webapi/src/main/java/com/gerry/yitao/yitaosellerservice/YitaoSellerWebApiApplication.java" />
+        <option value="$PROJECT_DIR$/yitao-common/src/main/java/com/gerry/yitao/common/base/GlobalCorsConfig.java" />
+        <option value="$PROJECT_DIR$/yitao-seller-webapi/src/main/java/com/gerry/yitao/yitaosellerservice/controller/CategoryController.java" />
+        <option value="$PROJECT_DIR$/yitao-seller-webapi/src/main/java/com/gerry/yitao/yitaosellerservice/controller/SpecController.java" />
+        <option value="$PROJECT_DIR$/yitao-common/src/main/java/com/gerry/yitao/common/base/filter/GlobalCorsConfig.java" />
+        <option value="$PROJECT_DIR$/yitao-seller-service/pom.xml" />
+        <option value="$PROJECT_DIR$/yitao-upload-service/src/test/java/com/gerry/yitao/yitaosellerservice/Testts.java" />
+        <option value="$PROJECT_DIR$/yitao-upload-service/src/test/java/com/gerry/yitao/yitaosellerservice/YitaoSellerServiceApplicationTests.java" />
+        <option value="$PROJECT_DIR$/yitao-upload-service/src/test/java/com/gerry/yitao/yitaouploadservice/YitaoSellerServiceApplicationTests.java" />
+        <option value="$PROJECT_DIR$/yitao-seller-service/src/main/java/com/gerry/yitao/yitaosellerservice/service/CategoryServiceImpl.java" />
+        <option value="$PROJECT_DIR$/yitao-seller-interface/src/main/java/com/gerry/yitao/bo/BrandBo.java" />
+        <option value="$PROJECT_DIR$/yitao-seller-webapi/src/main/java/com/gerry/yitao/yitaosellerservice/controller/GoodsController.java" />
+        <option value="$PROJECT_DIR$/yitao-seller-interface/src/main/java/com/gerry/yitao/dto/CartDto.java" />
+        <option value="$PROJECT_DIR$/yitao-upload-service/src/main/java/com/gerry/yitao/yitaouploadservice/YitaoUploadServiceApplication.java" />
+        <option value="$PROJECT_DIR$/yitao-upload-webapi/src/main/java/com/gerry/yitao/yitaouploadwebapi/YitaoUploadWebApiApplication.java" />
+        <option value="$PROJECT_DIR$/yitao-upload-webapi/pom.xml" />
+        <option value="$PROJECT_DIR$/yitao-upload-service/src/main/java/com/gerry/yitao/yitaouploadservice/config/UploadProperties.java" />
+        <option value="$PROJECT_DIR$/yitao-common/pom.xml" />
+        <option value="$PROJECT_DIR$/yitao-common/src/main/resources/fdfs_client.conf" />
+        <option value="$PROJECT_DIR$/yitao-common/src/main/java/com/gerry/yitao/common/util/FastDFSClient.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/yitao-upload-interface/src/main/java/com/gerry/yitao/upload/bo/UploadBo.java" />
+        <option value="$PROJECT_DIR$/yitao-upload-service/src/test/java/com/gerry/yitao/yitaouploadservice/Testts.java" />
+        <option value="$PROJECT_DIR$/yitao-upload-service/src/main/resources/fdfs_client.conf" />
+        <option value="$PROJECT_DIR$/yitao-upload-service/src/main/java/com/gerry/yitao/yitaouploadservice/config/FastClientImporter.java" />
+        <option value="$PROJECT_DIR$/yitao-upload-service/src/main/java/com/gerry/yitao/yitaouploadservice/config/FastdfsClientConfig.java" />
+        <option value="$PROJECT_DIR$/yitao-seller-webapi/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/yitao-upload-interface/pom.xml" />
+        <option value="$PROJECT_DIR$/yitao-upload-service/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/yitao-upload-webapi/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/yitao-seller-service/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/yitao-seller-webapi/src/main/java/com/gerry/yitao/yitaosellerservice/controller/BrandController.java" />
+        <option value="$PROJECT_DIR$/yitao-seller-service/src/main/java/com/gerry/yitao/yitaosellerservice/service/BrandServiceImpl.java" />
+        <option value="$PROJECT_DIR$/yitao-seller-webapi/pom.xml" />
+        <option value="$PROJECT_DIR$/yitao-upload-service/pom.xml" />
+        <option value="$PROJECT_DIR$/yitao-upload-service/src/main/resources/fdfs/fdfs_client.conf" />
+        <option value="$PROJECT_DIR$/yitao-upload-interface/src/main/java/com/gerry/yitao/upload/service/UploadService.java" />
+        <option value="$PROJECT_DIR$/yitao-domain/src/main/java/com/gerry/yitao/entity/PageResult.java" />
+        <option value="$PROJECT_DIR$/yitao-common/src/main/java/com/gerry/yitao/common/upload/FastdfsClient.java" />
+        <option value="$PROJECT_DIR$/yitao-upload-service/src/main/java/com/gerry/yitao/yitaouploadservice/service/UploadServiceImpl.java" />
+        <option value="$PROJECT_DIR$/yitao-upload-webapi/src/main/java/com/gerry/yitao/yitaouploadwebapi/controller/UploadController.java" />
+        <option value="$PROJECT_DIR$/yitao-common/src/main/java/com/gerry/yitao/common/handler/CustomExceptionHandler.java" />
+        <option value="$PROJECT_DIR$/yitao-seller-service/src/main/java/com/gerry/yitao/yitaosellerservice/service/GoodsServiceImpl.java" />
+        <option value="$PROJECT_DIR$/yitao-seller-service/src/main/java/com/gerry/yitao/yitaosellerservice/service/SpecServiceImpl.java" />
+        <option value="$PROJECT_DIR$/yitao-domain/src/main/java/com/gerry/yitao/domain/Spu.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/J2EE/apache-maven-3.5.4" />
+        <option name="pluginUpdatePolicy" value="DO_NOT_UPDATE" />
+        <option name="userSettingsFile" value="D:\J2EE\apache-maven-3.5.4\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="MavenProjectNavigator">
+    <treeState>
+      <expand>
+        <path>
+          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
+          <item name="yitao-upload-interface" type="9519ce18:MavenProjectsStructure$ProjectNode" />
+        </path>
+      </expand>
+      <select />
+    </treeState>
+  </component>
+  <component name="MavenRunner">
+    <option name="skipTests" value="true" />
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="45" />
+    <option name="y" value="10" />
+    <option name="width" value="1520" />
+    <option name="height" value="1030" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state />
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="AndroidView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="yitao-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yitao-parent" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yitao-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yitao-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="yitao-common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yitao-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yitao-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="yitao-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yitao-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yitao-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="yitao-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yitao-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yitao-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="yitao-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yitao-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yitao-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="yitao-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yitao-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yitao-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="yitao-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="gerry" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yitao-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yitao-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="yitao-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="gerry" type="462c0819:PsiDirectoryNode" />
+              <item name="yitao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yitao-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yitao-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="yitao-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="gerry" type="462c0819:PsiDirectoryNode" />
+              <item name="yitao" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yitao-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yitao-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="yitao-common" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="gerry" type="462c0819:PsiDirectoryNode" />
+              <item name="yitao" type="462c0819:PsiDirectoryNode" />
+              <item name="common" type="462c0819:PsiDirectoryNode" />
+              <item name="upload" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yitao-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yitao-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="yitao-upload-service" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yitao-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yitao-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="yitao-upload-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yitao-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yitao-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="yitao-upload-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yitao-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yitao-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="yitao-upload-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yitao-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yitao-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="yitao-upload-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yitao-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yitao-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="yitao-upload-service" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="gerry" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="yitao-parent" type="b2602c69:ProjectViewProjectNode" />
+              <item name="yitao-parent" type="462c0819:PsiDirectoryNode" />
+              <item name="yitao-upload-webapi" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="JPA.DatabaseSchemaImportDialog" value="1131dc9c-8e55-43dc-92de-dd9d063ceb74" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;jar://D:/J2EE/apache-maven-3.5.4/resp/com/github/tobato/fastdfs-client/1.26.1-RELEASE/fastdfs-client-1.26.1-RELEASE-sources.jar!/com/github/tobato/fastdfs/proto/AbstractFdfsCommand.java&#10;ata&#9;FILE&#9;jar://C:/dev/j2ee/jdk/jdk1.8/jre/lib/rt.jar!/javax/swing/table/AbstractTableModel.class" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="true" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1555838536138" />
+    <property name="database.console.LAST_STATE" value="true" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/yitao-pojo/src/main/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/yitao-upload-interface/pom.xml" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.gerry.yitao.yitaouploadservice.config" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\project\yitao-parent\yitao-upload-service\src\main\resources" />
+      <recent name="D:\project\yitao-parent\yitao-upload-service\src\main\java\com\gerry\yitao\yitaouploadservice\config" />
+      <recent name="D:\project\yitao-parent\yitao-seller-webapi\src\main\java\com\gerry\yitao\yitaosellerservice\controller" />
+      <recent name="D:\project\yitao-parent\yitao-mapper\src\main\java\com\gerry\yitao\mapper" />
+      <recent name="D:\project\yitao-parent\yitao-seller-service\src\main\java\com\gerry\yitao\yitaosellerservice\service" />
+    </key>
+    <key name="ImportMappingsDialog.RecentPackages">
+      <recent name="com.gerry.yitao.domain" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\project\yitao-parent\yitao-upload-service\src\main\resources\fdfs" />
+      <recent name="D:\project\yitao-parent\yitao-common\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+    <option name="contentProportion" value="0.21941216" />
+  </component>
+  <component name="RunManager" selected="Spring Boot.YitaoSellerWebApiApplication">
+    <configuration name="Testts.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="yitao-upload-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gerry.yitao.yitaouploadservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.gerry.yitao.yitaouploadservice" />
+      <option name="MAIN_CLASS_NAME" value="com.gerry.yitao.yitaouploadservice.Testts" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="YitaoSellerServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="yitao-seller-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gerry.yitao.yitaosellerservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gerry.yitao.yitaosellerservice.YitaoSellerServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="YitaoSellerWebApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="yitao-seller-webapi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gerry.yitao.yitaosellerservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gerry.yitao.yitaosellerservice.YitaoSellerWebApiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="YitaoUploadServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="yitao-upload-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gerry.yitao.yitaouploadservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gerry.yitao.yitaouploadservice.YitaoUploadServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="YitaoUploadWebApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="yitao-upload-webapi" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.gerry.yitao.yitaouploadwebapi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.gerry.yitao.yitaouploadwebapi.YitaoUploadWebApiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.Testts.test1" />
+      <item itemvalue="Spring Boot.YitaoUploadServiceApplication" />
+      <item itemvalue="Spring Boot.YitaoUploadWebApiApplication" />
+      <item itemvalue="Spring Boot.YitaoSellerServiceApplication" />
+      <item itemvalue="Spring Boot.YitaoSellerWebApiApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.YitaoSellerWebApiApplication" />
+        <item itemvalue="Spring Boot.YitaoSellerServiceApplication" />
+        <item itemvalue="Spring Boot.YitaoUploadWebApiApplication" />
+        <item itemvalue="Spring Boot.YitaoUploadServiceApplication" />
+        <item itemvalue="JUnit.Testts.test1" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7b6fdad1-331b-44cd-9287-3ca0f84f06de" name="Default Changelist" comment="" />
+      <created>1555206703020</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1555206703020</updated>
+      <workItem from="1555206706861" duration="14684000" />
+      <workItem from="1555334803892" duration="3944000" />
+      <workItem from="1555385222180" duration="24400000" />
+      <workItem from="1555486967622" duration="10264000" />
+      <workItem from="1555501064977" duration="11160000" />
+      <workItem from="1555561122374" duration="1633000" />
+      <workItem from="1555571344554" duration="28240000" />
+      <workItem from="1555642864528" duration="19048000" />
+      <workItem from="1555735902701" duration="9279000" />
+      <workItem from="1555765369319" duration="25108000" />
+    </task>
+    <task id="LOCAL-00001" summary="商品和类型的后台数据渲染">
+      <created>1555429316115</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1555429316115</updated>
+    </task>
+    <task id="LOCAL-00002" summary="后台商品管理系统所有的功能接口实现(图片服务待完善)">
+      <created>1555510874035</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1555510874036</updated>
+    </task>
+    <task id="LOCAL-00003" summary="后台商品管理系统所有的功能接口实现(图片服务待完善)">
+      <created>1555561468893</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1555561468893</updated>
+    </task>
+    <task id="LOCAL-00004" summary="后台商品管理系统所有的功能接口实现(图片服务待完善)">
+      <created>1555571070215</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1555571070215</updated>
+    </task>
+    <task id="LOCAL-00005" summary="易淘电商项目后台完成">
+      <created>1555838387002</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1555838387002</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TestHistory">
+    <history-entry file="Testts_test1 - 2019.04.18 at 20h 46m 38s.xml">
+      <configuration name="Testts.test1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Testts_test1 - 2019.04.18 at 21h 54m 27s.xml">
+      <configuration name="Testts.test1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Testts_test1 - 2019.04.18 at 22h 15m 10s.xml">
+      <configuration name="Testts.test1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Testts_test1 - 2019.04.18 at 23h 07m 11s.xml">
+      <configuration name="Testts.test1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Testts_test1 - 2019.04.19 at 00h 08m 10s.xml">
+      <configuration name="Testts.test1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Testts_test1 - 2019.04.20 at 01h 35m 48s.xml">
+      <configuration name="Testts.test1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Testts - 2019.04.20 at 01h 36m 45s.xml">
+      <configuration name="Testts" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Testts_test1 - 2019.04.20 at 01h 38m 02s.xml">
+      <configuration name="Testts.test1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Testts_test1 - 2019.04.20 at 01h 42m 23s.xml">
+      <configuration name="Testts.test1" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="Testts_test1 - 2019.04.20 at 01h 43m 02s.xml">
+      <configuration name="Testts.test1" configurationId="JUnit" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="147760000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.7816794" visible="true" weight="0.28705567" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Persistence" order="2" sideWeight="0.21832061" side_tool="true" weight="0.3400335" />
+      <window_info id="Designer" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" sideWeight="0.36335877" side_tool="true" weight="0.27470687" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Image Layers" order="7" />
+      <window_info id="Web" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32991204" />
+      <window_info anchor="bottom" id="Run Dashboard" order="2" sideWeight="0.85244805" weight="0.3196481" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.7510548" weight="0.53519064" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4181818" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.32844576" />
+      <window_info anchor="bottom" id="Spring" order="8" weight="0.32844576" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.49266863" />
+      <window_info anchor="bottom" id="Database Console" order="10" weight="0.32824427" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.14755198" side_tool="true" weight="0.3372434" />
+      <window_info anchor="bottom" id="Run with VisualVM" order="12" weight="0.41788855" />
+      <window_info anchor="bottom" id="Problems" order="13" weight="0.32844576" />
+      <window_info anchor="bottom" id="Java Enterprise" order="14" weight="0.32844576" />
+      <window_info anchor="bottom" id="Database Changes" order="15" weight="0.28739002" />
+      <window_info anchor="bottom" id="Version Control" order="16" weight="0.26979473" />
+      <window_info anchor="bottom" id="Messages" order="17" weight="0.23607038" />
+      <window_info anchor="bottom" id="Debug with VisualVM" order="18" />
+      <window_info anchor="bottom" id="JPA Console" order="19" weight="0.329429" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" sideWeight="0.49926794" weight="0.2487395" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" visible="true" weight="0.038900066" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Mybatis datasource" order="5" sideWeight="0.50229007" side_tool="true" weight="0.23608316" />
+      <window_info anchor="right" id="Database" order="6" sideWeight="0.49770993" weight="0.23474178" />
+      <window_info anchor="right" id="Maven Projects" order="7" sideWeight="0.49926794" weight="0.26760563" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Theme Preview" order="9" />
+      <window_info anchor="right" id="Bean Validation" order="10" weight="0.32997987" />
+    </layout>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$" />
+    </ignored-roots>
+    <MESSAGE value="商品和类型的后台数据渲染" />
+    <MESSAGE value="后台商品管理系统所有的功能接口实现(图片服务待完善)" />
+    <MESSAGE value="易淘电商项目后台完成" />
+    <option name="LAST_COMMIT_MESSAGE" value="易淘电商项目后台完成" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$MAVEN_REPOSITORY$/com/github/tobato/fastdfs-client/1.26.1-RELEASE/fastdfs-client-1.26.1-RELEASE-sources.jar!/com/github/tobato/fastdfs/proto/AbstractFdfsCommand.java</url>
+          <line>122</line>
+          <properties />
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://C:/dev/j2ee/jdk/jdk1.8/src.zip!/java/io/InputStream.java</url>
+          <line>161</line>
+          <properties />
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="antWorkspaceConfiguration">
+    <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
+    <option name="FILTER_TARGETS" value="false" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/yitao-upload-interface/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="28" column="31" selection-start-line="28" selection-start-column="31" selection-end-line="28" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-upload-webapi/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-seller-webapi/src/main/java/com/gerry/yitao/yitaosellerservice/controller/CategoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/com/github/pagehelper/pagehelper/5.1.2/pagehelper-5.1.2.jar!/com/github/pagehelper/page/PageMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="46" column="30" selection-start-line="46" selection-start-column="30" selection-end-line="46" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-seller-service/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-157" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-seller-service/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-228" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-seller-interface/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-342" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-seller-webapi/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-upload-service/pom.xml">
+      <provider editor-type-id="MavenHelperPluginDependencyAnalyzer" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="43" column="21" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-upload-service/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-upload-service/src/main/resources/fdfs/fdfs_client.conf">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-domain/src/main/java/com/gerry/yitao/entity/PageResult.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="20" column="31" lean-forward="true" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-upload-interface/src/main/java/com/gerry/yitao/upload/service/UploadService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="12" column="42" selection-start-line="12" selection-start-column="42" selection-end-line="12" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-upload-webapi/src/main/java/com/gerry/yitao/yitaouploadwebapi/YitaoUploadWebApiApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#525#526#0" expanded="true" />
+            <element signature="e#598#599#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.6.RELEASE/spring-web-5.1.6.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="137" selection-start-line="137" selection-end-line="137" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.6.RELEASE/spring-webmvc-5.1.6.RELEASE-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="127" selection-start-line="127" selection-end-line="127" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-upload-service/src/main/java/com/gerry/yitao/yitaouploadservice/YitaoUploadServiceApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.6.RELEASE/spring-webmvc-5.1.6.RELEASE-sources.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="536">
+          <caret line="899" selection-start-line="899" selection-end-line="899" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-upload-webapi/src/main/java/com/gerry/yitao/yitaouploadwebapi/controller/UploadController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="321">
+          <caret line="49" column="77" selection-start-line="49" selection-start-column="77" selection-end-line="49" selection-end-column="77" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-upload-service/src/main/java/com/gerry/yitao/yitaouploadservice/service/UploadServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="53">
+          <caret line="68" column="9" lean-forward="true" selection-start-line="68" selection-start-column="9" selection-end-line="68" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-seller-webapi/src/main/java/com/gerry/yitao/yitaosellerservice/YitaoSellerWebApiApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-seller-webapi/src/main/java/com/gerry/yitao/yitaosellerservice/controller/BrandController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-759">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-common/src/main/java/com/gerry/yitao/common/exception/ResourceNotFoundException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-common/src/main/java/com/gerry/yitao/common/exception/PermissionDeniedException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-common/src/main/java/com/gerry/yitao/common/exception/ParamValidationException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.6.RELEASE/spring-web-5.1.6.RELEASE-sources.jar!/org/springframework/http/HttpStatus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="370" column="4" selection-start-line="370" selection-start-column="4" selection-end-line="370" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-common/src/main/java/com/gerry/yitao/common/entity/CommonResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="206">
+          <caret line="71" column="27" lean-forward="true" selection-start-line="71" selection-start-column="27" selection-end-line="71" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/5.1.6.RELEASE/spring-webmvc-5.1.6.RELEASE-sources.jar!/org/springframework/web/servlet/config/annotation/WebMvcConfigurationSupport.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="128">
+          <caret line="880" column="36" selection-start-line="880" selection-start-column="36" selection-end-line="880" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/5.1.6.RELEASE/spring-web-5.1.6.RELEASE-sources.jar!/org/springframework/web/bind/annotation/ResponseStatus.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-106">
+          <caret line="59" column="18" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-common/src/main/java/com/gerry/yitao/common/handler/CustomExceptionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="26" column="39" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-common/src/main/java/com/gerry/yitao/common/exception/SystemException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="171">
+          <caret line="25" column="13" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-common/src/main/java/com/gerry/yitao/common/exception/VersionValidationException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="24" column="13" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-seller-service/src/main/java/com/gerry/yitao/yitaosellerservice/service/CategoryServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-57">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-domain/src/main/java/com/gerry/yitao/domain/SpuDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-seller-service/src/main/java/com/gerry/yitao/yitaosellerservice/service/BrandServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-631">
+          <caret line="104" column="9" selection-start-line="104" selection-start-column="9" selection-end-line="104" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-domain/src/main/java/com/gerry/yitao/domain/Spu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="67">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-seller-webapi/src/main/java/com/gerry/yitao/yitaosellerservice/controller/GoodsController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="850">
+          <caret line="106" column="67" selection-start-line="106" selection-start-column="64" selection-end-line="106" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-seller-webapi/src/main/java/com/gerry/yitao/yitaosellerservice/controller/SpecController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1235">
+          <caret line="46" column="23" selection-start-line="46" selection-start-column="17" selection-end-line="46" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-mapper/src/main/java/com/gerry/yitao/mapper/CategoryMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-mapper/src/main/java/com/gerry/yitao/mapper/OrderDetailMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-mapper/src/main/java/com/gerry/yitao/mapper/SkuMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-mapper/src/main/java/com/gerry/yitao/mapper/SpuDetailMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-mapper/src/main/java/com/gerry/yitao/mapper/SpuMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-mapper/src/main/java/com/gerry/yitao/mapper/SpecParamMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-mapper/src/main/java/com/gerry/yitao/mapper/SpecGroupMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-mapper/src/main/java/com/gerry/yitao/mapper/BrandMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-common/src/main/java/com/gerry/yitao/common/exception/ServiceException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="30" column="11" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
+          <folding>
+            <element signature="e#1176#1177#0" expanded="true" />
+            <element signature="e#1197#1198#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-seller-service/src/main/java/com/gerry/yitao/yitaosellerservice/service/GoodsServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="66" column="38" selection-start-line="66" selection-start-column="37" selection-end-line="66" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-seller-service/src/main/java/com/gerry/yitao/yitaosellerservice/service/SpecServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="91">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/yitao-common/src/main/java/com/gerry/yitao/common/upload/FastdfsClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-152">
+          <caret line="41" column="62" lean-forward="true" selection-start-line="41" selection-start-column="62" selection-end-line="41" selection-end-column="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="1" column="7" selection-start-line="1" selection-start-column="7" selection-end-line="1" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>tomcat</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>yitao-common</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.8</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: com.alibaba.boot:dubbo-spring-boot-autoconfigure:0.2.0</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>

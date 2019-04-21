@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="yitao-common" />
+        <module name="yitao-domain" />
+        <module name="yitao-mapper" />
+        <module name="yitao-seller-interface" />
+        <module name="yitao-seller-service" />
+        <module name="yitao-seller-webapi" />
+        <module name="yitao-upload-interface" />
+        <module name="yitao-upload-service" />
+        <module name="yitao-upload-webapi" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="yitao-pojo" target="1.8" />
+      <module name="yitao-seller-interface (1)" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

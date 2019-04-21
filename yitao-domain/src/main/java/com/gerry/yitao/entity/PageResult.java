@@ -17,6 +17,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PageResult<T> implements Serializable {
+    private static final long serialVersionUID = 4612105649493688532L;
     private long total; // 总记录数
     private List<T> rows; // 每页显示的数据集合
 }

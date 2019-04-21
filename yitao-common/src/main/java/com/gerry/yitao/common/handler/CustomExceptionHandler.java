@@ -28,7 +28,7 @@ public class CustomExceptionHandler {
     public CommonResponse commonExceptionHandle(Exception e) {
         CommonResponse commonResponse = CommonResponse.createCommonResponse();
         log.error("[SystemException]Exception:", e);
-        return commonResponse.fail("System Error, please try again later! Message:" + e.getMessage());
+        return commonResponse.fail("系统异常:" + e.getMessage());
     }
 
     @ResponseBody
@@ -37,7 +37,7 @@ public class CustomExceptionHandler {
     public CommonResponse serviceExceptionHandle(Exception e) {
         CommonResponse commonResponse = CommonResponse.createCommonResponse();
         log.error("[ServiceException]Exception:", e);
-        return commonResponse.fail("ServiceException, message:" + e.getMessage());
+        return commonResponse.fail("业务异常:" + e.getMessage());
     }
 
     @ResponseBody
@@ -46,7 +46,7 @@ public class CustomExceptionHandler {
     public CommonResponse permissionDeniedExceptionHandle(Exception e) {
         CommonResponse commonResponse = CommonResponse.createCommonResponse();
         log.error("[PermissionDeniedException]Exception:", e);
-        return commonResponse.fail("Permission Denied!");
+        return commonResponse.fail("权限不足");
     }
 
     @ResponseBody
@@ -56,7 +56,7 @@ public class CustomExceptionHandler {
     public CommonResponse paramValidationExceptionHandle(Exception e) {
         CommonResponse commonResponse = CommonResponse.createCommonResponse();
         log.error("[ParamValidationException]Exception:", e);
-        return commonResponse.fail("Parameter validation failure! Message:" + e.getMessage());
+        return commonResponse.fail("参数无效异常:" + e.getMessage());
     }
 
     @ResponseBody
@@ -65,6 +65,6 @@ public class CustomExceptionHandler {
     public CommonResponse resourceNotFoundExceptionHandle(Exception e) {
         CommonResponse commonResponse = CommonResponse.createCommonResponse();
         log.error("[ResourceNotFoundException]Exception:", e);
-        return commonResponse.fail("Resource not found! Message:" + e.getMessage());
+        return commonResponse.fail("资源未找到异常:" + e.getMessage());
     }
 }

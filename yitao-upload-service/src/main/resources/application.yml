@@ -3,6 +3,8 @@ dubbo:
     name: yitao-upload-service
   protocol:
     port: 20881
+    payload: 104857600
+    name: hessian
   registry:
     address: zookeeper://192.168.3.220:2181?backup=192.168.3.221:2181,192.168.3.222:2181
 
@@ -12,12 +14,6 @@ yitao:
     - image/jpeg
     - image/png
     - image/bmp
-    baseUrl: http://image.yitao.com/
-fdfs:
-  connect-timeout: 600
-  so-timeout: 2500
-  thumb-image:
-    height: 60
-    width: 60
-  tracker-list:
-  - 192.168.3.201:22122
+    baseUrl: http://yitao.image.com/
+server:
+  port: 7777

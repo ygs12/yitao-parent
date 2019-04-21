@@ -12,8 +12,8 @@ import java.util.List;
  * @Description:
  */
 @Data
-@ConfigurationProperties(prefix = "yitao.upload")
 @Component
+@ConfigurationProperties(prefix = "yitao.upload")
 public class UploadProperties {
 
     private String baseUrl;

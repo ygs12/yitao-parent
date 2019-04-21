@@ -24,3 +24,5 @@ dubbo:
 logging:
   level:
     com.gerry.yitao.mapper: debug
+server:
+  port: 5555

@@ -32,8 +32,6 @@ public class BrandServiceImpl implements BrandService {
 
     @Override
     public PageResult<Brand> queryBrandByPageAndSort(Integer page, Integer rows, String sortBy, Boolean desc, String key) {
-        //开启分页
-        PageHelper.startPage(page, rows);
         //过滤
         Example example = new Example(Brand.class);
         if (StringUtils.isNotBlank(key)) {
@@ -43,6 +41,12 @@ public class BrandServiceImpl implements BrandService {
             String sortByClause = sortBy + (desc ? " DESC" : " ASC");
             example.setOrderByClause(sortByClause);
         }
+        if (rows < 0) {
+            rows = brandMapper.selectCountByExample(example);
+        }
+
+        //开启分页
+        PageHelper.startPage(page, rows);
         List<Brand> brandList = brandMapper.selectByExample(example);
         if (CollectionUtils.isEmpty(brandList)) {
             throw new ServiceException("查询的品牌列表为空");
@@ -99,8 +103,6 @@ public class BrandServiceImpl implements BrandService {
                 throw new ServiceException("更新的品牌分类失败");
             }
         }
-
-
     }
 
     @Transactional

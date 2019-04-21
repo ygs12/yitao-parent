@@ -2,18 +2,17 @@ package com.gerry.yitao.yitaouploadservice.service;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.gerry.yitao.common.exception.ServiceException;
+import com.gerry.yitao.common.upload.FastdfsClient;
+import com.gerry.yitao.upload.bo.UploadBo;
 import com.gerry.yitao.upload.service.UploadService;
 import com.gerry.yitao.yitaouploadservice.config.UploadProperties;
-import com.github.tobato.fastdfs.domain.StorePath;
-import com.github.tobato.fastdfs.service.FastFileStorageClient;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.multipart.MultipartFile;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
 /**
@@ -22,29 +21,25 @@ import java.io.IOException;
  * @Date: 2019/4/17 18:19
  * @Description:
  */
-@Service
+@Service(timeout = 40000)
 @Component
 @Slf4j
 public class UploadServiceImpl implements UploadService {
-
     @Autowired
     private UploadProperties prop;
-
     @Autowired
-    private FastFileStorageClient storageClient;
+    private FastdfsClient storageClient;
 
     @Override
-    public String uploadImage(MultipartFile file) {
-        //对文件进行校验
-        //对文件格式进行校验
-        String contentType = file.getContentType();
-        if (!prop.getAllowTypes().contains(contentType)) {
+    public String uploadImage(UploadBo uploadBo) {
+
+        if (!prop.getAllowTypes().contains(uploadBo.getContentType().trim())) {
             throw new ServiceException("文件的类型不正确");
         }
 
         //检验文件内容
         try {
-            BufferedImage image = ImageIO.read(file.getInputStream());
+            BufferedImage image = ImageIO.read(new ByteArrayInputStream(uploadBo.getBytes()));
             if (image == null) {
                 log.info("【文件上传】上传文件格式错误");
                 throw new ServiceException("上传文件的格式不正确");
@@ -54,19 +49,25 @@ public class UploadServiceImpl implements UploadService {
             throw new ServiceException("文件上传失败");
         }
 
-
         //保存图片
         try {
-            String extensionName = StringUtils.substringAfterLast(file.getOriginalFilename(), ".");
-            StorePath storePath = storageClient.uploadFile(file.getInputStream(), file.getSize(), extensionName, null);
+            String storePath = storageClient.uploadFile(uploadBo.getBytes(), uploadBo.getFileName());
             //返回保存图片的完整url
-            return prop.getBaseUrl() + storePath.getFullPath();
-        } catch (IOException e) {
+            return prop.getBaseUrl() + storePath;
+        } catch (Exception e) {
             log.info("【文件上传】图片上传异常", e);
             throw new ServiceException("图片上传异常");
         }
+    }
 
+    @Override
+    public Integer deleteImage(String imagePath) {
+        Integer result = storageClient.delete_file(imagePath);
 
+        if (result.intValue() == -1) {
+            throw new ServiceException("删除图片失败");
+        }
 
+        return result;
     }
 }

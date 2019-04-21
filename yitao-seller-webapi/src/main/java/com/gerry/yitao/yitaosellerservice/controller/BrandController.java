@@ -21,7 +21,7 @@ import java.util.List;
 @RequestMapping("api/item/brand")
 public class BrandController {
 
-    @Reference(check = false)
+    @Reference(check = false, timeout = 4000)
     private BrandService brandService;
 
     @GetMapping("page")

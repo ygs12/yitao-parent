@@ -21,6 +21,7 @@ import java.util.List;
 @Data
 public class Spu implements Serializable {
 
+    private static final long serialVersionUID = -1223915015811104991L;
     @Id
     @KeySql(useGeneratedKeys = true)
     private Long id;

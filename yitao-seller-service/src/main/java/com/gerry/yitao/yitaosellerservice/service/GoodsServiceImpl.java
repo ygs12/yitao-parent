@@ -46,7 +46,6 @@ public class GoodsServiceImpl implements GoodsService {
     @Autowired
     private StockMapper stockMapper;
 
-
     @Override
     public PageResult<Spu> querySpuByPage(Integer page, Integer rows, String key, Boolean saleable) {
         //分页
@@ -71,7 +70,7 @@ public class GoodsServiceImpl implements GoodsService {
         List<Spu> spuList = spuMapper.selectByExample(example);
 
         if (CollectionUtils.isEmpty(spuList)) {
-            throw new ServiceException("查询的商品部存在");
+            throw new ServiceException("查询的商品不存在");
         }
         //对查询结果中的分类名和品牌名进行处理
         handleCategoryAndBrand(spuList);
@@ -85,7 +84,7 @@ public class GoodsServiceImpl implements GoodsService {
     public SpuDetail querySpuDetailBySpuId(Long spuId) {
         SpuDetail spuDetail = spuDetailMapper.selectByPrimaryKey(spuId);
         if (spuDetail == null) {
-            throw new ServiceException("查询的商品部存在");
+            throw new ServiceException("查询的商品不存在");
         }
         return spuDetail;
     }
@@ -96,7 +95,7 @@ public class GoodsServiceImpl implements GoodsService {
         sku.setSpuId(spuId);
         List<Sku> skuList = skuMapper.select(sku);
         if (CollectionUtils.isEmpty(skuList)) {
-            throw new ServiceException("查询的商品部存在");
+            throw new ServiceException("查询的商品的SKU失败");
         }
 
         //查询库存
@@ -110,7 +109,7 @@ public class GoodsServiceImpl implements GoodsService {
     @Override
     public void deleteGoodsBySpuId(Long spuId) {
         if (spuId == null) {
-            throw new ServiceException("查询的商品部存在");
+            throw new ServiceException("请传入查询的SPU编号");
         }
         //删除spu,把spu中的valid字段设置成false
         Spu spu = new Spu();
@@ -118,7 +117,7 @@ public class GoodsServiceImpl implements GoodsService {
         spu.setValid(false);
         int count = spuMapper.updateByPrimaryKeySelective(spu);
         if (count == 0) {
-            throw new ServiceException("查询的商品部存在");
+            throw new ServiceException("删除SPU失败");
         }
     }
 
@@ -133,14 +132,14 @@ public class GoodsServiceImpl implements GoodsService {
         //插入数据
         int count = spuMapper.insert(spu);
         if (count != 1) {
-            throw new ServiceException("查询的商品部存在");
+            throw new ServiceException("添加商品信息失败");
         }
         //插入spuDetail数据
         SpuDetail spuDetail = spu.getSpuDetail();
         spuDetail.setSpuId(spu.getId());
         count = spuDetailMapper.insert(spuDetail);
         if (count != 1) {
-            throw new ServiceException("查询的商品部存在");
+            throw new ServiceException("添加商品详情数据失败");
         }
 
         //插入sku和库存
@@ -152,7 +151,7 @@ public class GoodsServiceImpl implements GoodsService {
     @Override
     public void updateGoods(Spu spu) {
         if (spu.getId() == 0) {
-            throw new ServiceException("查询的商品部存在");
+            throw new ServiceException("请传入查询的商品ID");
         }
         //首先查询sku
         Sku sku = new Sku();
@@ -172,7 +171,7 @@ public class GoodsServiceImpl implements GoodsService {
         //更新spu spuDetail
         int count = spuMapper.updateByPrimaryKeySelective(spu);
         if (count == 0) {
-            throw new ServiceException("查询的商品部存在");
+            throw new ServiceException("更新商品信息失败");
         }
 
 
@@ -180,7 +179,7 @@ public class GoodsServiceImpl implements GoodsService {
         spuDetail.setSpuId(spu.getId());
         count = spuDetailMapper.updateByPrimaryKeySelective(spuDetail);
         if (count == 0) {
-            throw new ServiceException("查询的商品部存在");
+            throw new ServiceException("更新商品详情信息失败");
         }
 
         //更新sku和stock
@@ -192,7 +191,7 @@ public class GoodsServiceImpl implements GoodsService {
         spu.setSaleable(!spu.getSaleable());
         int count = spuMapper.updateByPrimaryKeySelective(spu);
         if (count != 1) {
-            throw new ServiceException("查询的商品部存在");
+            throw new ServiceException("商品上架失败");
         }
     }
 
@@ -218,7 +217,7 @@ public class GoodsServiceImpl implements GoodsService {
     public List<Sku> querySkusByIds(List<Long> ids) {
         List<Sku> skus = skuMapper.selectByIdList(ids);
         if (CollectionUtils.isEmpty(skus)) {
-            throw new ServiceException("查询的商品部存在");
+            throw new ServiceException("查询");
         }
         //填充库存
         fillStock(ids, skus);
@@ -267,7 +266,7 @@ public class GoodsServiceImpl implements GoodsService {
             sku.setLastUpdateTime(sku.getCreateTime());
             int count = skuMapper.insert(sku);
             if (count != 1) {
-                throw new ServiceException("保存库存失败");
+                throw new ServiceException("保存SPU对应的SKU失败");
             }
 
             Stock stock = new Stock();
@@ -278,7 +277,7 @@ public class GoodsServiceImpl implements GoodsService {
         //批量插入库存数据
         int count = stockMapper.insertList(stocks);
         if (count == 0) {
-            throw new ServiceException("保存库存失败");
+            throw new ServiceException("保存商品的SKU库存失败");
         }
     }
 

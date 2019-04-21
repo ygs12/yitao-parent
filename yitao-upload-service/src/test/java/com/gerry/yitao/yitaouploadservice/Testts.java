@@ -1,11 +1,10 @@
 package com.gerry.yitao.yitaouploadservice;
 
-import com.github.tobato.fastdfs.domain.StorePath;
-import com.github.tobato.fastdfs.service.FastFileStorageClient;
+import com.gerry.yitao.common.upload.FastdfsClient;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.io.FileInputStream;
+import java.io.*;
 
 /**
  * @ProjectName: yitao-parent
@@ -15,14 +14,35 @@ import java.io.FileInputStream;
  */
 public class Testts extends YitaoSellerServiceApplicationTests {
     @Autowired
-    private FastFileStorageClient storageClient;
+    private FastdfsClient storageClient;
 
     @Test
     public void test1() throws Exception{
-        FileInputStream fileInputStream = new FileInputStream("C:\\Users\\GERRY\\Pictures\\Saved Pictures\\tt.jpg");
-        System.out.println(fileInputStream);
-        StorePath jpg = storageClient.uploadFile(fileInputStream, fileInputStream.available(), "jpg", null);
-        System.out.println(jpg.getFullPath());
+        File file = new File("D:\\hr.jpg");
+        String jpg = storageClient.uploadFile(getBytes(file.getCanonicalPath()), file.getName());
+        System.out.println(jpg);
+    }
+
+    private byte[] getBytes(String filePath){
+        byte[] buffer = null;
+        try {
+            File file = new File(filePath);
+            FileInputStream fis = new FileInputStream(file);
+            ByteArrayOutputStream bos = new ByteArrayOutputStream(1000);
+            byte[] b = new byte[1000];
+            int n;
+            while ((n = fis.read(b)) != -1) {
+                bos.write(b, 0, n);
+            }
+            fis.close();
+            bos.close();
+            buffer = bos.toByteArray();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return buffer;
     }
 
 }

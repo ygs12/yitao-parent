@@ -36,7 +36,7 @@ public class SpecServiceImpl implements SpecService {
         specGroup.setCid(cid);
         List<SpecGroup> specGroupList = specGroupMapper.select(specGroup);
         if (CollectionUtils.isEmpty(specGroupList)) {
-            throw new ServiceException("规格参数");
+            throw new ServiceException("未找到规格组列表");
         }
         return specGroupList;
     }
@@ -45,20 +45,20 @@ public class SpecServiceImpl implements SpecService {
     public void saveSpecGroup(SpecGroup specGroup) {
         int count = specGroupMapper.insert(specGroup);
         if (count != 1) {
-            throw new ServiceException("规格参数");
+            throw new ServiceException("保存规则组失败");
         }
     }
 
     @Override
     public void deleteSpecGroup(Long id) {
         if (id == null) {
-            throw new ServiceException("规格参数");
+            throw new ServiceException("未传入规格组ID");
         }
         SpecGroup specGroup = new SpecGroup();
         specGroup.setId(id);
         int count = specGroupMapper.deleteByPrimaryKey(specGroup);
         if (count != 1) {
-            throw new ServiceException("规格参数");
+            throw new ServiceException("删除规格组失败");
         }
     }
 
@@ -66,7 +66,7 @@ public class SpecServiceImpl implements SpecService {
     public void updateSpecGroup(SpecGroup specGroup) {
         int count = specGroupMapper.updateByPrimaryKey(specGroup);
         if (count != 1) {
-            throw new ServiceException("规格参数");
+            throw new ServiceException("更新规格组失败");
         }
     }
 
@@ -80,7 +80,7 @@ public class SpecServiceImpl implements SpecService {
         specParam.setGeneric(generic);
         List<SpecParam> specParamList = specParamMapper.select(specParam);
         if (CollectionUtils.isEmpty(specParamList)) {
-            throw new ServiceException("规格参数");
+            throw new ServiceException("查询规则参数列表不存在");
         }
         return specParamList;
     }
@@ -89,7 +89,7 @@ public class SpecServiceImpl implements SpecService {
     public void saveSpecParam(SpecParam specParam) {
         int count = specParamMapper.insert(specParam);
         if (count != 1) {
-            throw new ServiceException("规格参数");
+            throw new ServiceException("保存规则参数失败");
         }
     }
 
@@ -97,18 +97,18 @@ public class SpecServiceImpl implements SpecService {
     public void updateSpecParam(SpecParam specParam) {
         int count = specParamMapper.updateByPrimaryKeySelective(specParam);
         if (count != 1) {
-            throw new ServiceException("规格参数");
+            throw new ServiceException("更新规格参数失败");
         }
     }
 
     @Override
     public void deleteSpecParam(Long id) {
         if (id == null) {
-            throw new ServiceException("规格参数");
+            throw new ServiceException("未传入格式参数ID");
         }
         int count = specParamMapper.deleteByPrimaryKey(id);
         if (count != 1) {
-            throw new ServiceException("规格参数");
+            throw new ServiceException("删除规格参数失败");
         }
     }
 

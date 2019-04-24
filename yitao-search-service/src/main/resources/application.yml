@@ -1,0 +1,21 @@
+spring:
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch
+      cluster-nodes: 192.168.3.201:9300
+  rabbitmq:
+    virtual-host: /
+    username: test
+    password: test
+    host: 192.168.3.201
+dubbo:
+  application:
+    name: yitao-search-service
+  protocol:
+    port: 20882
+  registry:
+    address: zookeeper://192.168.3.220:2181?backup=192.168.3.221:2181,192.168.3.222:2181
+server:
+  port: 7788
+# 调用外部服务接口的前缀
+client.url: http://api.yitao.com/

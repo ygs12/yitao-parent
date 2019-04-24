@@ -12,7 +12,6 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 import tk.mybatis.mapper.entity.Example;
@@ -22,8 +21,7 @@ import java.util.List;
 /**
  * 品牌业务处理类
  */
-@Component
-@Service
+@Service(timeout = 3000)
 public class BrandServiceImpl implements BrandService {
 
     @Autowired

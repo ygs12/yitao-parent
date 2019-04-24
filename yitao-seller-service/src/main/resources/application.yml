@@ -14,6 +14,19 @@ spring:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:mysql://127.0.0.1:3306/orange?useSSL=false&serverTimezone=UTC
     username: root
+  rabbitmq:
+    host: 192.168.3.201
+    username: test
+    password: test
+    virtual-host: /
+    template:
+      retry:
+        enabled: true
+        initial-interval: 10000ms
+        max-interval: 30000ms
+        multiplier: 2
+      exchange: yt.item.exchange
+    publisher-confirms: true
 dubbo:
   application:
     name: yitao-seller-service

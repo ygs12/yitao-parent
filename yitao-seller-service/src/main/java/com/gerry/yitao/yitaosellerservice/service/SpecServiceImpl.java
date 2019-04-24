@@ -8,7 +8,6 @@ import com.gerry.yitao.mapper.SpecGroupMapper;
 import com.gerry.yitao.mapper.SpecParamMapper;
 import com.gerry.yitao.upload.service.SpecService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
 import java.util.ArrayList;
@@ -19,8 +18,7 @@ import java.util.Map;
 /**
  * 商品的规格业务
  */
-@Component
-@Service
+@Service(timeout = 3000)
 public class SpecServiceImpl implements SpecService {
 
     @Autowired

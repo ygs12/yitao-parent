@@ -18,6 +18,9 @@
         <module>yitao-upload-interface</module>
         <module>yitao-upload-service</module>
         <module>yitao-upload-webapi</module>
+        <module>yitao-search-interface</module>
+        <module>yitao-search-service</module>
+        <module>yitao-search-webapi</module>
     </modules>
 
     <properties>
@@ -77,6 +80,12 @@
             <dependency>
                 <groupId>com.gerry.yitao</groupId>
                 <artifactId>yitao-upload-interface</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.gerry.yitao</groupId>
+                <artifactId>yitao-search-interface</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
 

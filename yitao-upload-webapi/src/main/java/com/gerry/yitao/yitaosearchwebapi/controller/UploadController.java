@@ -1,4 +1,4 @@
-package com.gerry.yitao.yitaouploadwebapi.controller;
+package com.gerry.yitao.yitaosearchwebapi.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.gerry.yitao.upload.bo.UploadBo;

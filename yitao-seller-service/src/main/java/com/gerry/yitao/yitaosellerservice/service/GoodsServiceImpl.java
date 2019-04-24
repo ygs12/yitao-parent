@@ -11,8 +11,8 @@ import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
+import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 import tk.mybatis.mapper.entity.Example;
@@ -24,8 +24,7 @@ import java.util.stream.Collectors;
  * 商品业务类
  */
 @Slf4j
-@Component
-@Service
+@Service(timeout = 3000)
 public class GoodsServiceImpl implements GoodsService {
 
     @Autowired
@@ -45,6 +44,9 @@ public class GoodsServiceImpl implements GoodsService {
 
     @Autowired
     private StockMapper stockMapper;
+
+    @Autowired
+    private AmqpTemplate amqpTemplate;
 
     @Override
     public PageResult<Spu> querySpuByPage(Integer page, Integer rows, String key, Boolean saleable) {
@@ -119,6 +121,9 @@ public class GoodsServiceImpl implements GoodsService {
         if (count == 0) {
             throw new ServiceException("删除SPU失败");
         }
+
+        //发送消息
+        sendMessage(spuId, "delete");
     }
 
     @Transactional
@@ -144,6 +149,9 @@ public class GoodsServiceImpl implements GoodsService {
 
         //插入sku和库存
         saveSkuAndStock(spu);
+
+        //发送消息
+        sendMessage(spu.getId(), "insert");
 
     }
 
@@ -184,6 +192,9 @@ public class GoodsServiceImpl implements GoodsService {
 
         //更新sku和stock
         saveSkuAndStock(spu);
+
+        //发送消息
+        sendMessage(spu.getId(), "update");
     }
 
     @Override
@@ -299,6 +310,20 @@ public class GoodsServiceImpl implements GoodsService {
 
             //查询品牌
             spu.setBname(brandMapper.selectByPrimaryKey(spu.getBrandId()).getName());
+        }
+    }
+
+    /**
+     * 封装发送到消息队列的方法
+     *
+     * @param id
+     * @param type
+     */
+    private void sendMessage(Long id, String type) {
+        try {
+            amqpTemplate.convertAndSend("item." + type, id);
+        } catch (Exception e) {
+            log.error("{}商品消息发送异常，商品ID：{}", type, id, e);
         }
     }
 }

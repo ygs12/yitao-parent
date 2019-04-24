@@ -6,7 +6,6 @@ import com.gerry.yitao.domain.Category;
 import com.gerry.yitao.mapper.CategoryMapper;
 import com.gerry.yitao.upload.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
 import java.util.Arrays;
@@ -15,8 +14,7 @@ import java.util.List;
 /**
  * 商品分类业务类
  */
-@Component
-@Service
+@Service(timeout = 3000)
 public class CategoryServiceImpl implements CategoryService {
 
     @Autowired

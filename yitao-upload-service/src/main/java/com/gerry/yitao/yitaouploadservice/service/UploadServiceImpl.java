@@ -8,7 +8,6 @@ import com.gerry.yitao.upload.service.UploadService;
 import com.gerry.yitao.yitaouploadservice.config.UploadProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -21,8 +20,7 @@ import java.io.IOException;
  * @Date: 2019/4/17 18:19
  * @Description:
  */
-@Service(timeout = 40000)
-@Component
+@Service(timeout = 4000)
 @Slf4j
 public class UploadServiceImpl implements UploadService {
     @Autowired

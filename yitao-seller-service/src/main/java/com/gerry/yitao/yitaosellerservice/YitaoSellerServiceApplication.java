@@ -13,21 +13,6 @@ public class YitaoSellerServiceApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(YitaoSellerServiceApplication.class);
-
-        /// 环境测试
-        /*ConfigurableApplicationContext context = SpringApplication.run(YitaoSellerServiceApplication.class, args);
-        DataSource bean = context.getBean(DataSource.class);
-        System.out.println(bean);
-
-        String[] beanDefinitionNames = context.getBeanDefinitionNames();
-        for (String beanDefinitionName : beanDefinitionNames) {
-            System.out.println(beanDefinitionName);
-        }
-
-        BrandMapper bean1 = context.getBean(BrandMapper.class);
-        System.out.println(bean1.selectAll());
-
-        context.close();*/
     }
 
 }

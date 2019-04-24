@@ -19,5 +19,11 @@ import java.util.List;
 public class PageResult<T> implements Serializable {
     private static final long serialVersionUID = 4612105649493688532L;
     private long total; // 总记录数
+    private Integer totalPages; //总页数
     private List<T> rows; // 每页显示的数据集合
+
+    public PageResult(long total, List<T> rows) {
+        this.total = total;
+        this.rows = rows;
+    }
 }

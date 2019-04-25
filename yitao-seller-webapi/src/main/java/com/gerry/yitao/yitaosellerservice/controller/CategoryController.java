@@ -62,8 +62,8 @@ public class CategoryController {
      * @param id
      * @return
      */
-    @GetMapping("all/level")
-    public ResponseEntity<List<Category>> queryAllByCid3(@RequestParam("id") Long id) {
+    @GetMapping("all/level/{id}")
+    public ResponseEntity<List<Category>> queryAllByCid3(@PathVariable("id") Long id) {
         return ResponseEntity.ok(categoryService.queryAllByCid3(id));
     }
 }

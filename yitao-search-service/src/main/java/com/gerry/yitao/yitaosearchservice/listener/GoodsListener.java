@@ -30,6 +30,7 @@ public class GoodsListener {
     public void listenInsert(Long id) {
         //监听新增或更新
         if (id != null) {
+            System.out.println("处理insert/update消息");
             searchService.insertOrUpdate(id);
         }
 
@@ -45,6 +46,7 @@ public class GoodsListener {
     public void listenDelete(Long id) {
         //监听删除
         if (id != null) {
+            System.out.println("处理delete消息");
             searchService.delete(id);
         }
     }

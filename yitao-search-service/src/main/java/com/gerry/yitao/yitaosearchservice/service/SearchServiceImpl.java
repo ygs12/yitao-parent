@@ -199,33 +199,34 @@ public class SearchServiceImpl implements SearchService {
 
     public SearchResult<Goods> search(SearchRequest searchRequest) {
 
-        String key = searchRequest.getKey();
-        if (StringUtils.isBlank(key)) {
-            //
-        }
+        // 创建查询构建器
+        // 当前页
+        int page = searchRequest.getPage() - 1; // es分页第一页是0，所以需要减一
+        // 每页显示条数
+        int size = searchRequest.getSize();
+
         NativeSearchQueryBuilder queryBuilder = new NativeSearchQueryBuilder();
+        // 查询做字段的帅选
+        queryBuilder.withSourceFilter(new FetchSourceFilter(new String[]{"id","subtitle","skus"}, null));
+        // 分页
+        queryBuilder.withPageable(PageRequest.of(page, size));
+        // 过滤
+        queryBuilder.withQuery(QueryBuilders.matchQuery("all",searchRequest.getKey()));
 
-        //通过sourceFilter字段过滤只要我们需要的数据
-        queryBuilder.withSourceFilter(new FetchSourceFilter(new String[]{"id", "subtitle", "skus"}, null));
-
-        //分页和排序
-        searchWithPageAndSort(queryBuilder, searchRequest);
-
-        //基本搜索条件
-        QueryBuilder basicQuery = buildBasicQuery(searchRequest);
-        queryBuilder.withQuery(basicQuery);
-
-        //对分类和品牌聚合
+        // 聚合
+        // 分类聚合
         String categoryAggName = "categoryAgg";
         queryBuilder.addAggregation(AggregationBuilders.terms(categoryAggName).field("cid3"));
-
+        // 品牌聚合
         String brandAggName = "brandAgg";
         queryBuilder.addAggregation(AggregationBuilders.terms(brandAggName).field("brandId"));
-
-        //查询，获取结果
+        // 查询
         AggregatedPage<Goods> result = template.queryForPage(queryBuilder.build(), Goods.class);
-
-        //解析聚合结果
+        // 解析结果
+        long total = result.getTotalElements();
+        int totalPages = result.getTotalPages();
+        List<Goods> items = result.getContent();
+        // 解析聚合结果
         Aggregations aggs = result.getAggregations();
         //解析分类聚合
         List<Category> categories = handleCategoryAgg(aggs.get(categoryAggName));
@@ -236,15 +237,10 @@ public class SearchServiceImpl implements SearchService {
         List<Map<String, Object>> specs = null;
 
         if (categories != null && categories.size() == 1) {
-            specs = handleSpecs(categories.get(0).getId(), basicQuery);
+            specs = handleSpecs(categories.get(0).getId(), queryBuilder);
         }
 
-        //解析分页结果
-        long total = result.getTotalElements();
-        int totalPage = result.getTotalPages();
-        List<Goods> items = result.getContent();
-
-        return new SearchResult(total, totalPage, items, categories, brands, specs);
+        return new SearchResult(total, totalPages, items, categories, brands, specs);
     }
 
     /**
@@ -254,7 +250,7 @@ public class SearchServiceImpl implements SearchService {
      * @param basicQuery
      * @return
      */
-    private List<Map<String, Object>> handleSpecs(Long id, QueryBuilder basicQuery) {
+    private List<Map<String, Object>> handleSpecs(Long id,  NativeSearchQueryBuilder basicQuery) {
         List<Map<String, Object>> specs = new ArrayList<>();
 
         //查询可过滤的规格参数
@@ -262,12 +258,12 @@ public class SearchServiceImpl implements SearchService {
 
         //基本查询条件
         NativeSearchQueryBuilder queryBuilder = new NativeSearchQueryBuilder();
-        queryBuilder.withQuery(basicQuery);
         queryBuilder.withPageable(PageRequest.of(0, 1));
 
         for (SpecParam param : params) {
             //聚合
             String name = param.getName();
+            // 如果对keyword类型的字符串进行搜索必须是精确匹配terms
             queryBuilder.addAggregation(AggregationBuilders.terms(name).field("specs." + name + ".keyword"));
         }
         //查询

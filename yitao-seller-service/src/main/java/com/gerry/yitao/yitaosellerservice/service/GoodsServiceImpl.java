@@ -117,6 +117,7 @@ public class GoodsServiceImpl implements GoodsService {
         Spu spu = new Spu();
         spu.setId(spuId);
         spu.setValid(false);
+        spu.setSaleable(false);
         int count = spuMapper.updateByPrimaryKeySelective(spu);
         if (count == 0) {
             throw new ServiceException("删除SPU失败");
@@ -204,6 +205,9 @@ public class GoodsServiceImpl implements GoodsService {
         if (count != 1) {
             throw new ServiceException("商品上架失败");
         }
+
+        //发送消息
+        sendMessage(spu.getId(), "update");
     }
 
     @Override
@@ -322,6 +326,7 @@ public class GoodsServiceImpl implements GoodsService {
     private void sendMessage(Long id, String type) {
         try {
             amqpTemplate.convertAndSend("item." + type, id);
+            System.out.println("发送商品"+type+"操作信息.......");
         } catch (Exception e) {
             log.error("{}商品消息发送异常，商品ID：{}", type, id, e);
         }

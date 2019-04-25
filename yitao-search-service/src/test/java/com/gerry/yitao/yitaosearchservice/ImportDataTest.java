@@ -1,4 +1,4 @@
-package com.gerry.yitao.yitaouploadservice;
+package com.gerry.yitao.yitaosearchservice;
 
 import com.gerry.yitao.domain.Spu;
 import com.gerry.yitao.entity.PageResult;

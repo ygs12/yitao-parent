@@ -1,4 +1,4 @@
-package com.gerry.yitao.yitaosellerservice;
+package com.gerry.yitao.yitaouploadservice;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

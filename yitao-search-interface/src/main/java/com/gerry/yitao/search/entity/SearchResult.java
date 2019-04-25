@@ -5,8 +5,8 @@ import com.gerry.yitao.domain.Brand;
 import com.gerry.yitao.domain.Category;
 import com.gerry.yitao.entity.PageResult;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
@@ -17,7 +17,8 @@ import java.util.Map;
  * @Description:
  */
 @Data
-public class SearchResult<Goods> extends PageResult<Goods>  implements Serializable {
+@NoArgsConstructor
+public class SearchResult<Goods> extends PageResult<Goods> {
 
     private List<Brand> brands;
     private List<Category> categories;

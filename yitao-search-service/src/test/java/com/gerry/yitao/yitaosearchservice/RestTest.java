@@ -1,4 +1,4 @@
-package com.gerry.yitao.yitaouploadservice;
+package com.gerry.yitao.yitaosearchservice;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;

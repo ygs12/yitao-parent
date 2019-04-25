@@ -1,4 +1,4 @@
-package com.gerry.yitao.yitaosearchwebapi.controller;
+package com.gerry.yitao.yitaosearchservicewebapi.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.gerry.yitao.search.entity.Goods;
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @Description:
  */
 @RestController
-@RequestMapping("search")
+@RequestMapping("api/search")
 public class GoodsSearchController {
     @Reference(check = false,timeout = 3000)
     private SearchService searchService;

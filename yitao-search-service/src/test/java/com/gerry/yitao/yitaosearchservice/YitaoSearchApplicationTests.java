@@ -1,4 +1,4 @@
-package com.gerry.yitao.yitaouploadservice;
+package com.gerry.yitao.yitaosearchservice;
 
 import com.gerry.yitao.yitaosearchservice.YitaoSearchServiceApplication;
 import org.junit.runner.RunWith;

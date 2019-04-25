@@ -1,4 +1,4 @@
-package com.gerry.yitao.yitaosearchwebapi;
+package com.gerry.yitao.yitaouploadwebapi;
 
 import com.alibaba.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;

@@ -1,0 +1,18 @@
+spring:
+  rabbitmq:
+    virtual-host: /
+    username: test
+    password: test
+    host: 192.168.3.201
+dubbo:
+  application:
+    name: yitao-detail-service
+  protocol:
+    port: 20884
+  registry:
+    address: zookeeper://192.168.3.220:2181?backup=192.168.3.221:2181,192.168.3.222:2181
+server:
+  port: 7780
+# 调用外部服务接口的前缀
+client.url: http://api.yitao.com/
+yt.page.path: D:/vip/yitao/pages

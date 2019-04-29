@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("api/search")
 public class GoodsSearchController {
-    @Reference(check = false,timeout = 3000)
+    @Reference(check = false,timeout = 30000)
     private SearchService searchService;
 
     @PostMapping("page")

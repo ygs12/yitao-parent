@@ -7,8 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="yitao-common" />
+        <module name="yitao-detail-interface" />
+        <module name="yitao-detail-service" />
+        <module name="yitao-detail-webapi" />
         <module name="yitao-domain" />
         <module name="yitao-mapper" />
+        <module name="yitao-search-interface" />
+        <module name="yitao-search-service" />
+        <module name="yitao-search-webapi" />
         <module name="yitao-seller-interface" />
         <module name="yitao-seller-service" />
         <module name="yitao-seller-webapi" />

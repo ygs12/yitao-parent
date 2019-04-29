@@ -136,7 +136,6 @@ public class SpecController {
      */
     @GetMapping("{cid}")
     public ResponseEntity<List<SpecGroup>> querySpecsByCid(@PathVariable("cid") Long cid) {
-        //todo
         return ResponseEntity.ok(specService.querySpecsByCid(cid));
     }
 

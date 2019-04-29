@@ -212,7 +212,6 @@ public class SearchServiceImpl implements SearchService {
         queryBuilder.withPageable(PageRequest.of(page, size));
         // 过滤
         queryBuilder.withQuery(QueryBuilders.matchQuery("all",searchRequest.getKey()));
-
         // 聚合
         // 分类聚合
         String categoryAggName = "categoryAgg";

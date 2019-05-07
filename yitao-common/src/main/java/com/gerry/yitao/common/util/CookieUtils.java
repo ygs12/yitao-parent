@@ -107,7 +107,6 @@ public final class CookieUtils {
                 if (maxAge != null && maxAge > 0)
                     cookie.setMaxAge(maxAge);
                 if (null != request)// 设置域名的cookie
-                    //todo
                     cookie.setDomain(getDomainName(request));
                 cookie.setPath("/");
 

@@ -24,8 +24,10 @@ public class PageDetailController {
     public String toItemPage(@PathVariable("id") Long spuId, Model model) {
         Map<String, Object> attributes = detailService.loadModel(spuId);
         model.addAllAttributes(attributes);
-        // 生成静态详情页
-        detailService.createHtml(spuId);
+        // 同步
+        // detailService.createHtml(spuId);
+        // 异步生成静态详情页
+        detailService.asyncExecute(spuId);
 
         return "item";
     }

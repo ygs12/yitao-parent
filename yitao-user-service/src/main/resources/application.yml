@@ -1,0 +1,42 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      auto-commit: true
+      connection-test-query: SELECT 1
+      connection-timeout: 30000
+      idle-timeout: 30000
+      max-lifetime: 1800000
+      maximum-pool-size: 15
+      minimum-idle: 5
+      pool-name: DatebookHikariCP
+    password: 123
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://127.0.0.1:3306/orange?useSSL=false&serverTimezone=UTC
+    username: root
+  redis:
+    host: 192.168.3.172
+    password: redis-01
+  rabbitmq:
+    host: 192.168.3.201
+    username: test
+    password: test
+    virtual-host: /
+    template:
+      retry:
+        enabled: true
+        initial-interval: 10000ms
+        max-interval: 30000ms
+        multiplier: 2
+      exchange: yt.sms.queue
+    publisher-confirms: true
+dubbo:
+  application:
+    name: yitao-user-service
+    qos-enable: false
+  protocol:
+    port: 20886
+  registry:
+    address: zookeeper://192.168.3.220:2181?backup=192.168.3.221:2181,192.168.3.222:2181
+server:
+  port: 7779

@@ -1,0 +1,13 @@
+spring:
+  rabbitmq:
+    virtual-host: /
+    username: test
+    password: test
+    host: 192.168.3.201
+server:
+  port: 7783
+
+yt:
+  sms:
+    accessKeyId: C13907872
+    accessKeySecret: 3b38c5611c052c7de17d36f840fb4052

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.gerry.yitao</groupId>
+        <artifactId>yitao-parent</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>yitao-sms-service</artifactId>
+    <name>yitao-sms-service</name>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+
+        <!--SMS依赖-->
+        <dependency>
+            <groupId>org.xavier</groupId>
+            <artifactId>Utils</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/dom4j-1.6.1.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.xavier1</groupId>
+            <artifactId>Utils</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/commons-codec-1.3.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.xavier2</groupId>
+            <artifactId>Utils</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/commons-httpclient-3.0-rc4.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.xavier3</groupId>
+            <artifactId>Utils</artifactId>
+            <version>1.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/src/main/resources/lib/commons-logging-1.0.4.jar</systemPath>
+        </dependency>
+    </dependencies>
+</project>

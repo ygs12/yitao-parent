@@ -8,6 +8,7 @@ import com.gerry.yitao.yitaosearchservice.client.BrandClient;
 import com.gerry.yitao.yitaosearchservice.client.CategoryClient;
 import com.gerry.yitao.yitaosearchservice.client.GoodsClient;
 import com.gerry.yitao.yitaosearchservice.client.SpecClient;
+import com.gerry.yitao.yitaosearchservice.utils.ThreadUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -87,8 +88,17 @@ public class PageDetailServiceImpl implements PageDetailService {
         try (PrintWriter writer = new PrintWriter(file, "utf-8")) {
             templateEngine.process("item", context, writer);
         } catch (Exception e) {
+            deleteHtml(spuId);
             log.error("【静态页服务】生成静态页面异常", e);
         }
+    }
+
+    /**
+     * 新建线程异步处理页面静态化(优化)
+     * @param spuId
+     */
+    public void asyncExecute(Long spuId) {
+        ThreadUtil.execute(()->createHtml(spuId));
     }
 
     /**

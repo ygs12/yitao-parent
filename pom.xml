@@ -24,6 +24,16 @@
         <module>yitao-detail-interface</module>
         <module>yitao-detail-service</module>
         <module>yitao-detail-webapi</module>
+        <module>yitao-cart-interface</module>
+        <module>yitao-cart-service</module>
+        <module>yitao-cart-webapi</module>
+        <module>yitao-user-interface</module>
+        <module>yitao-user-service</module>
+        <module>yitao-user-webapi</module>
+        <module>yitao-auth-interface</module>
+        <module>yitao-auth-service</module>
+        <module>yitao-auth-webapi</module>
+        <module>yitao-sms-service</module>
     </modules>
 
     <properties>
@@ -51,6 +61,8 @@
         <pagehelper-version>1.2.3</pagehelper-version>
         <fastdfs-version>1.26.1-RELEASE</fastdfs-version>
         <yitao-version>1.0-SNAPSHOT</yitao-version>
+        <commons-codec-version>1.10</commons-codec-version>
+        <jwt-version>0.9.0</jwt-version>
     </properties>
 
     <dependencyManagement>
@@ -98,7 +110,31 @@
                 <version>1.0-SNAPSHOT</version>
             </dependency>
 
+            <dependency>
+                <groupId>com.gerry.yitao</groupId>
+                <artifactId>yitao-user-interface</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.gerry.yitao</groupId>
+                <artifactId>yitao-auth-interface</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.gerry.yitao</groupId>
+                <artifactId>yitao-cart-interface</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
+
             <!--/////////////////////////////////////////////////-->
+
+            <dependency>
+                <groupId>io.jsonwebtoken</groupId>
+                <artifactId>jjwt</artifactId>
+                <version>${jwt-version}</version>
+            </dependency>
 
             <dependency>
                 <groupId>javax.persistence</groupId>
@@ -122,6 +158,12 @@
                 <groupId>org.apache.commons</groupId>
                 <artifactId>commons-lang3</artifactId>
                 <version>${commons-lang3-version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-codec</groupId>
+                <artifactId>commons-codec</artifactId>
+                <version>${commons-codec-version}</version>
             </dependency>
 
             <dependency>

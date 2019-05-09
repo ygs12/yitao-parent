@@ -5,3 +5,6 @@ dubbo:
     address: zookeeper://192.168.3.220:2181?backup=192.168.3.221:2181,192.168.3.222:2181
 server:
   port: 10010
+spring:
+  profiles:
+    active: common

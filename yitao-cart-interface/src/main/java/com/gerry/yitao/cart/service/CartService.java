@@ -1,6 +1,7 @@
 package com.gerry.yitao.cart.service;
 
 import com.gerry.yitao.cart.entity.Cart;
+import com.gerry.yitao.common.entity.UserInfo;
 
 import java.util.List;
 
@@ -15,26 +16,26 @@ public interface CartService {
      * 添加到购物车
      * @param cart
      */
-    void addCart(Cart cart);
+    void addCart(Cart cart, UserInfo user);
 
     /**
      * 查询购物车
      * @return
      */
-    List<Cart> listCart();
+    List<Cart> listCart(UserInfo user);
 
     /**
      * 根据id更新商品数量
      * @param id
      * @param num
      */
-    void updateNum(Long id, Integer num);
+    void updateNum(Long id, Integer num,UserInfo user);
 
     /**
      * 删除购物车商品
      * @param id
      */
-    void deleteCart(Long id);
+    void deleteCart(Long id,UserInfo user);
 
     /**
      * 批量删除购物车商品

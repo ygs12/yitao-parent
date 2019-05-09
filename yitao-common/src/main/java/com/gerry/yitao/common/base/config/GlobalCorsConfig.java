@@ -1,4 +1,4 @@
-package com.gerry.yitao.common.base.filter;
+package com.gerry.yitao.common.base.config;
 
 import org.springframework.boot.SpringBootConfiguration;
 import org.springframework.context.annotation.Bean;
@@ -11,6 +11,7 @@ import org.springframework.web.filter.CorsFilter;
  * @Auther: GERRY
  * @Date: 2019/4/16 23:48
  * @Description: 全局跨域配置类
+ * 使用CORS，用于解决ajax跨域访问问题
  */
 @SpringBootConfiguration
 public class GlobalCorsConfig {

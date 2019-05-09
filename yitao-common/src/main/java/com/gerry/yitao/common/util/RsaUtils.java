@@ -1,4 +1,4 @@
-package com.gerry.yitao.auth.utils;
+package com.gerry.yitao.common.util;
 
 import java.io.File;
 import java.io.IOException;

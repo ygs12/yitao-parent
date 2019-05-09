@@ -19,7 +19,7 @@ import javax.validation.Valid;
 @RequestMapping("api/user")
 public class UserController {
 
-    @Reference(timeout = 40000)
+    @Reference(timeout = 40000, check = false)
     private UserService userService;
 
     /**

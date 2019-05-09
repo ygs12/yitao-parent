@@ -4,6 +4,7 @@ import com.gerry.yitao.common.util.RestTemplateUtils;
 import com.gerry.yitao.domain.User;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,6 +15,7 @@ import java.util.Map;
  * @Date: 2019/5/6 19:07
  * @Description:
  */
+@Component
 public class UserClient {
     @Value("${client.url:}")
     private String url;

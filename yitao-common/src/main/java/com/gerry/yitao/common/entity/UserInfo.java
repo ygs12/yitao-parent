@@ -1,8 +1,10 @@
-package com.gerry.yitao.auth.entity;
+package com.gerry.yitao.common.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
 
 /**
  * @ProjectName: yitao-parent
@@ -13,8 +15,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class UserInfo {
+public class UserInfo implements Serializable {
     private Long id;
-    private String name;
+    private String username;
 }
 

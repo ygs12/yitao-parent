@@ -1,4 +1,4 @@
-package com.gerry.yitao.auth.utils;
+package com.gerry.yitao.common.util;
 
 import org.apache.commons.lang3.StringUtils;
 

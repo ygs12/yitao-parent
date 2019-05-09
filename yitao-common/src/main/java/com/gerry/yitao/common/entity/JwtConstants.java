@@ -1,4 +1,4 @@
-package com.gerry.yitao.auth.entity;
+package com.gerry.yitao.common.entity;
 
 /**
  * @ProjectName: yitao-parent

@@ -220,7 +220,7 @@
                             <div class="fl">
                                 <ul class="btn-choose unstyled">
                                     <li>
-                                        <a href="#" target="_blank"
+                                        <a href="#" @click.prevent="addCart" target="_blank"
                                            class="sui-btn  btn-danger addshopcar">加入购物车</a>
                                     </li>
                                 </ul>
@@ -662,6 +662,48 @@
             },
             increment() {
                 this.num++;
+            },
+            addCart() {
+                // 判断是否登录
+                yt.http.get("/auth/verify").then(() => {
+                    // 已登录
+                    yt.http.post("/cart", {
+                        skuId: this.sku.id,
+                        title: this.sku.title,
+                        image: this.images[0],
+                        price: this.sku.price,
+                        num: this.num,
+                        ownSpec: JSON.stringify(this.ownSpec)
+                    }).then(() => {
+                        // 跳转到购物车列表页
+                        window.location.href = "http://www.yitao.com/cart.html";
+                    }).catch(() => {
+                        alert("添加购物车失败，请重试！");
+                    })
+                }).catch(() => {
+                    // 获取以前的购物车
+                    const carts = yt.store.get("carts") || [];
+                    // 获取与当前商品id一致的购物车数据
+                    const cart = carts.find(c => c.skuId === this.sku.id);
+                    if (cart) {
+                        // 存在，修改数量
+                        cart.num += this.num;
+                    } else {
+                        // 不存在，新增
+                        carts.push({
+                            skuId: this.sku.id,
+                            title: this.sku.title,
+                            image: this.images[0],
+                            price: this.sku.price,
+                            num: this.num,
+                            ownSpec: JSON.stringify(this.ownSpec)
+                        })
+                    }
+                    // 未登录
+                    yt.store.set("carts", carts);
+                    // 跳转到购物车列表页
+                    window.location.href = "http://www.yitao.com/cart.html";
+                })
             },
             locked(id, i) {
                 // 如果只有一个可选项，永不锁定

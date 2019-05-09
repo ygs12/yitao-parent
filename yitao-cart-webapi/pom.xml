@@ -14,18 +14,7 @@
 
         <dependency>
             <groupId>com.gerry.yitao</groupId>
-            <artifactId>yitao-common</artifactId>
-        </dependency>
-
-
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.gerry.yitao</groupId>
-            <artifactId>yitao-detail-interface</artifactId>
+            <artifactId>yitao-cart-interface</artifactId>
         </dependency>
 
         <dependency>

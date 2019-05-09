@@ -13,11 +13,6 @@
     <dependencies>
         <dependency>
             <groupId>com.gerry.yitao</groupId>
-            <artifactId>yitao-common</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>com.gerry.yitao</groupId>
             <artifactId>yitao-auth-interface</artifactId>
         </dependency>
 

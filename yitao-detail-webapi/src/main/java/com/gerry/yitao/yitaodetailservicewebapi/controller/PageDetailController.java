@@ -25,7 +25,7 @@ public class PageDetailController {
         Map<String, Object> attributes = detailService.loadModel(spuId);
         model.addAllAttributes(attributes);
         // 同步
-        // detailService.createHtml(spuId);
+        //detailService.createHtml(spuId);
         // 异步生成静态详情页
         detailService.asyncExecute(spuId);
 

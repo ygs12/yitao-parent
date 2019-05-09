@@ -1,5 +1,5 @@
 server:
-  port: 10040
+  port: 10060
 dubbo:
   application:
     name: yitao-auth-web
@@ -9,3 +9,13 @@ dubbo:
 spring:
   jackson:
     default-property-inclusion: non_null
+  profiles:
+    active: common
+yt:
+  jwt:
+    secret: yt@Login(Auth}*^778)&gerry%f35YUE2 # 登录校验的密钥
+    pubKeyPath: D:/vip/keys/gerry/id_rsa.pub # 公钥地址
+    priKeyPath: D:/vip/keys/gerry/id_rsa # 私钥地址
+    expire: 30 # 过期时间,单位分钟
+    cookieName: YT_TOKEN
+    cookieMaxAge: 1800

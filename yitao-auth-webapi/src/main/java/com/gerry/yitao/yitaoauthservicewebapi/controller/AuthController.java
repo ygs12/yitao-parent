@@ -2,14 +2,13 @@ package com.gerry.yitao.yitaoauthservicewebapi.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.gerry.yitao.auth.entity.JwtProperties;
-import com.gerry.yitao.auth.entity.UserInfo;
 import com.gerry.yitao.auth.service.AuthService;
-import com.gerry.yitao.auth.utils.JwtUtils;
+import com.gerry.yitao.common.entity.UserInfo;
 import com.gerry.yitao.common.exception.ServiceException;
 import com.gerry.yitao.common.util.CookieUtils;
+import com.gerry.yitao.common.util.JwtUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,10 +23,9 @@ import javax.servlet.http.HttpServletResponse;
  * @Description:
  */
 @RestController
-@EnableConfigurationProperties(JwtProperties.class)
-@RequestMapping("auth")
+@RequestMapping("api/auth")
 public class AuthController {
-    @Reference(timeout = 4000)
+    @Reference(timeout = 4000, check = false)
     private AuthService authService;
 
     @Autowired(required = false)

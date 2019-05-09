@@ -1,6 +1,6 @@
 package com.gerry.yitao.auth.entity;
 
-import com.gerry.yitao.auth.utils.RsaUtils;
+import com.gerry.yitao.common.util.RsaUtils;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.context.properties.ConfigurationProperties;
@@ -27,7 +27,7 @@ public class JwtProperties {
 
     private String priKeyPath;
 
-    private Integer expire;
+    private Integer expire; // jwt字符串时间
 
     private String cookieName;
 
@@ -35,7 +35,7 @@ public class JwtProperties {
 
     private PublicKey publicKey;
 
-    private int cookieMaxAge;
+    private int cookieMaxAge; // cookie
 
     @PostConstruct
     public void init() {

@@ -9,3 +9,5 @@ dubbo:
 spring:
   jackson:
     default-property-inclusion: non_null
+  profiles:
+    active: common

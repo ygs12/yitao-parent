@@ -19,6 +19,13 @@ public interface CartService {
     void addCart(Cart cart, UserInfo user);
 
     /**
+     * 批量添加商品到购物
+     * @param carts
+     * @param loginUser
+     */
+    void addCarts(List<Cart> carts,UserInfo loginUser);
+
+    /**
      * 查询购物车
      * @return
      */

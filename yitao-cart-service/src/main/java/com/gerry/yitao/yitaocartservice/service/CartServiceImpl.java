@@ -50,11 +50,42 @@ public class CartServiceImpl implements CartService {
             //Redis中有该商品，修改数量
             cart = JsonUtils.toBean(hashOps.get(hashKey).toString(), Cart.class);
             cart.setNum(num + cart.getNum());
-
         }
 
         //存入Redis中
         hashOps.put(hashKey, JsonUtils.toString(cart));
+    }
+
+    /**
+     * 添加购物车到Redis中
+     *
+     * @param carts
+     */
+    public void addCarts(List<Cart> carts,UserInfo loginUser) {
+        //获取用户信息
+        String key = KEY_PREFIX + loginUser.getId();
+
+        for (Cart cart : carts) {
+            //获取商品ID
+            String hashKey = cart.getSkuId().toString();
+
+            //获取数量
+            Integer num = cart.getNum();
+
+            //获取hash操作的对象
+            BoundHashOperations<String, Object, Object> hashOps = redisTemplate.boundHashOps(key);
+
+            if (hashOps.hasKey(hashKey)) {
+                //Redis中有该商品，修改数量
+                cart = JsonUtils.toBean(hashOps.get(hashKey).toString(), Cart.class);
+                cart.setNum(num + cart.getNum());
+
+            }
+
+            //存入Redis中
+            hashOps.put(hashKey, JsonUtils.toString(cart));
+        }
+
 
 
     }

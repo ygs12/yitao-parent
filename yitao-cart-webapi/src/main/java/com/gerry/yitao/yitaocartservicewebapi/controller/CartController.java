@@ -36,6 +36,19 @@ public class CartController {
         return ResponseEntity.ok().build();
     }
 
+    /**
+     * 批量添加商品到购物车
+     *
+     * @param carts
+     * @return
+     */
+    @PostMapping("batch")
+    public ResponseEntity<Void> addCarts(@RequestBody List<Cart> carts) {
+        UserInfo user = LoginInterceptor.getLoginUser();
+        cartService.addCarts(carts, user);
+        return ResponseEntity.ok().build();
+    }
+
 
     /**
      * 从购物车中删除商品
@@ -76,6 +89,4 @@ public class CartController {
         UserInfo user = LoginInterceptor.getLoginUser();
         return ResponseEntity.ok(cartService.listCart(user));
     }
-
-
 }

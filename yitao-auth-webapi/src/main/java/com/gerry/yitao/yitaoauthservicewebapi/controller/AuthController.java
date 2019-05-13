@@ -72,6 +72,7 @@ public class AuthController {
             String newToken = JwtUtils.generateToken(userInfo, props.getPrivateKey(), props.getExpire());
             //将新的Token写入cookie中，并设置httpOnly
             CookieUtils.newBuilder(response).httpOnly().maxAge(props.getCookieMaxAge()).request(request).build(props.getCookieName(), newToken);
+
             return ResponseEntity.ok(userInfo);
         } catch (Exception e) {
             //Token无效

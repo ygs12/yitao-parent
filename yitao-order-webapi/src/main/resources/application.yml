@@ -1,8 +1,8 @@
 server:
-  port: 10030
+  port: 10080
 dubbo:
   application:
-    name: yitao-search-webapi
+    name: yitao-order-web
     qos-enable: false
   registry:
     address: zookeeper://192.168.3.220:2181?backup=192.168.3.221:2181,192.168.3.222:2181

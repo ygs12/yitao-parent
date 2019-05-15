@@ -16,14 +16,22 @@ import java.io.Serializable;
 @Data
 @Table(name = "tb_order_detail")
 public class OrderDetail implements Serializable {
+
     @Id
     @KeySql(useGeneratedKeys = true)
-    private long id;
-    private long orderId;
-    private long skuId;
-    private int num;
-    private String title;
-    private String ownSpec;
-    private long price;
-    private String image;
+    private Long id;
+
+    private Long orderId;// 订单id
+
+    private Long skuId;// 商品id
+
+    private Integer num;// 商品购买数量
+
+    private String title;// 商品标题
+
+    private Long price;// 商品单价
+
+    private String ownSpec;// 商品规格数据
+
+    private String image;// 图片
 }

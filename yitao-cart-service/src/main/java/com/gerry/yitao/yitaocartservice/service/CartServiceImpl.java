@@ -148,7 +148,6 @@ public class CartServiceImpl implements CartService {
         String key = KEY_PREFIX + userId;
         BoundHashOperations<String, Object, Object> hashOps = redisTemplate.boundHashOps(key);
 
-
         for (Object id : ids) {
             hashOps.delete(id.toString());
         }

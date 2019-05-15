@@ -17,7 +17,7 @@ import java.util.Map;
  * @ProjectName: yitao-parent
  * @Auther: GERRY
  * @Date: 2019/5/3 19:10
- * @Description:
+ * @Description: 异步删除购物车商品信息
  */
 @Component
 public class CartListener {

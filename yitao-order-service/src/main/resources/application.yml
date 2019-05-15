@@ -50,8 +50,8 @@ yt:
     workerId: 29
     dataCenterId: 12
   wxpay:
-    appID: wxfbe945846a930d33
-    mchID: 1516374691
-    key: 5d9f0cc242b22326934f0b7857c9a040
+    appID: wxfbe9458
+    mchID: 1516374
+    key: 5d9f0cc24
     certPath: D:/vip/keys/apiclient_cert.p12
     notifyUrl: http://zzcgcg.natappfree.cc/wxpay/notify

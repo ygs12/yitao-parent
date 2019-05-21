@@ -1,6 +1,6 @@
 package com.gerry.yitao.order.dto;
 
-import com.gerry.yitao.dto.CartDto;
+import com.gerry.yitao.seller.dto.CartDto;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

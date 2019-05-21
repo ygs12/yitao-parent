@@ -4,20 +4,25 @@ import com.alibaba.dubbo.config.annotation.Service;
 import com.codingapi.txlcn.tc.annotation.LcnTransaction;
 import com.gerry.yitao.common.exception.ServiceException;
 import com.gerry.yitao.domain.*;
-import com.gerry.yitao.dto.CartDto;
 import com.gerry.yitao.entity.PageResult;
 import com.gerry.yitao.mapper.*;
-import com.gerry.yitao.upload.service.GoodsService;
+import com.gerry.yitao.seller.bo.SeckillParameter;
+import com.gerry.yitao.seller.dto.CartDto;
+import com.gerry.yitao.seller.service.GoodsService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.amqp.core.AmqpTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.BoundHashOperations;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 import tk.mybatis.mapper.entity.Example;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -25,7 +30,7 @@ import java.util.stream.Collectors;
  * 商品业务类
  */
 @Slf4j
-@Service(timeout = 3000)
+@Service(timeout = 30000)
 public class GoodsServiceImpl implements GoodsService {
 
     @Autowired
@@ -47,7 +52,15 @@ public class GoodsServiceImpl implements GoodsService {
     private StockMapper stockMapper;
 
     @Autowired
+    private SeckillMapper seckillMapper;
+
+    @Autowired
     private AmqpTemplate amqpTemplate;
+
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
+
+    private static final String KEY_PREFIX = "yt:seckill:stock";
 
     @Override
     public PageResult<Spu> querySpuByPage(Integer page, Integer rows, String key, Boolean saleable) {
@@ -331,4 +344,80 @@ public class GoodsServiceImpl implements GoodsService {
             log.error("{}商品消息发送异常，商品ID：{}", type, id, e);
         }
     }
+
+    ///////////////////////// 秒杀 ////////////////////////
+    /**
+     * 查询秒杀商品
+     * @return
+     */
+    @Override
+    public List<SeckillGoods> querySeckillGoods() {
+        Example example = new Example(SeckillGoods.class);
+        example.createCriteria().andEqualTo("enable",true);
+        List<SeckillGoods> list = this.seckillMapper.selectByExample(example);
+        list.forEach(goods -> {
+            Stock stock = this.stockMapper.selectByPrimaryKey(goods.getSkuId());
+            goods.setStock(stock.getSeckillStock());
+            goods.setSeckillTotal(stock.getSeckillTotal());
+        });
+        return list;
+    }
+
+    /**
+     * 添加秒杀商品
+     * @param seckillParameter
+     */
+    @Override
+    @Transactional(rollbackFor = Exception.class)
+    public void addSeckillGoods(SeckillParameter seckillParameter) throws ParseException {
+        SimpleDateFormat sdf =  new SimpleDateFormat( "yyyy-MM-dd HH:mm" );
+        //1.根据spu_id查询商品
+        Long id = seckillParameter.getId();
+        Sku sku = this.skuMapper.selectByPrimaryKey(id);
+        //2.插入到秒杀商品表中
+        SeckillGoods seckillGoods = new SeckillGoods();
+        seckillGoods.setEnable(true);
+        seckillGoods.setStartTime(sdf.parse(seckillParameter.getStartTime().trim()));
+        seckillGoods.setEndTime(sdf.parse(seckillParameter.getEndTime().trim()));
+        seckillGoods.setImage(sku.getImages());
+        seckillGoods.setSkuId(sku.getId());
+        seckillGoods.setStock(seckillParameter.getCount());
+        seckillGoods.setTitle(sku.getTitle());
+        seckillGoods.setSeckillPrice(sku.getPrice()*seckillParameter.getDiscount());
+        this.seckillMapper.insert(seckillGoods);
+        //3.更新对应的库存信息，tb_stock
+        Stock stock = stockMapper.selectByPrimaryKey(sku.getId());
+        System.out.println(stock);
+        if (stock != null) {
+            stock.setSeckillStock(stock.getSeckillStock() != null ? stock.getSeckillStock() + seckillParameter.getCount() : seckillParameter.getCount());
+            stock.setSeckillTotal(stock.getSeckillTotal() != null ? stock.getSeckillTotal() + seckillParameter.getCount() : seckillParameter.getCount());
+            stock.setStock(stock.getStock() - seckillParameter.getCount());
+            this.stockMapper.updateByPrimaryKeySelective(stock);
+        }else {
+            log.info("更新库存失败！");
+        }
+
+        //4.更新redis中的秒杀库存(预热到redis中)
+        updateSeckillStock();
+    }
+
+
+
+    /**
+     * 更新秒杀商品数量
+     * @throws Exception
+     */
+    public void updateSeckillStock(){
+        //1.查询可以秒杀的商品
+        List<SeckillGoods> seckillGoods = this.querySeckillGoods();
+        if (seckillGoods == null || seckillGoods.size() == 0){
+            return;
+        }
+        BoundHashOperations<String,Object,Object> hashOperations = this.stringRedisTemplate.boundHashOps(KEY_PREFIX);
+        if (hashOperations.hasKey(KEY_PREFIX)){
+            hashOperations.delete(KEY_PREFIX);
+        }
+        seckillGoods.forEach(goods -> hashOperations.put(goods.getSkuId().toString(),goods.getStock().toString()));
+    }
+
 }

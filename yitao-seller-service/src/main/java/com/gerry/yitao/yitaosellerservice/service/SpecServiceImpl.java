@@ -6,7 +6,7 @@ import com.gerry.yitao.domain.SpecGroup;
 import com.gerry.yitao.domain.SpecParam;
 import com.gerry.yitao.mapper.SpecGroupMapper;
 import com.gerry.yitao.mapper.SpecParamMapper;
-import com.gerry.yitao.upload.service.SpecService;
+import com.gerry.yitao.seller.service.SpecService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.CollectionUtils;
 
@@ -18,7 +18,7 @@ import java.util.Map;
 /**
  * 商品的规格业务
  */
-@Service(timeout = 3000)
+@Service(timeout = 30000)
 public class SpecServiceImpl implements SpecService {
 
     @Autowired

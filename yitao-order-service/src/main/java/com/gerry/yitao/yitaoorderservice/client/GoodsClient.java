@@ -4,7 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.gerry.yitao.common.util.RestTemplateUtils;
 import com.gerry.yitao.domain.Sku;
-import com.gerry.yitao.dto.CartDto;
+import com.gerry.yitao.seller.dto.CartDto;
 import com.google.common.base.Joiner;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;

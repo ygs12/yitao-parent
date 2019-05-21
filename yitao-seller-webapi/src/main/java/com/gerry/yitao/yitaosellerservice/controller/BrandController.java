@@ -1,10 +1,10 @@
 package com.gerry.yitao.yitaosellerservice.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
-import com.gerry.yitao.bo.BrandBo;
+import com.gerry.yitao.seller.bo.BrandBo;
 import com.gerry.yitao.domain.Brand;
 import com.gerry.yitao.entity.PageResult;
-import com.gerry.yitao.upload.service.BrandService;
+import com.gerry.yitao.seller.service.BrandService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +21,7 @@ import java.util.List;
 @RequestMapping("api/item/brand")
 public class BrandController {
 
-    @Reference(check = false, timeout = 4000)
+    @Reference(check = false, timeout = 40000)
     private BrandService brandService;
 
     @GetMapping("page")

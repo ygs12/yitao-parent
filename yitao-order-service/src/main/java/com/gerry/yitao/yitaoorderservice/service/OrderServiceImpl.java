@@ -19,7 +19,7 @@ import com.gerry.yitao.order.service.OrderService;
 import com.gerry.yitao.order.service.PayLogService;
 import com.gerry.yitao.order.status.OrderStatusEnum;
 import com.gerry.yitao.order.status.PayStateEnum;
-import com.gerry.yitao.upload.service.GoodsService;
+import com.gerry.yitao.seller.service.GoodsService;
 import com.gerry.yitao.yitaoorderservice.client.AddressClient;
 import com.gerry.yitao.yitaoorderservice.client.GoodsClient;
 import com.gerry.yitao.yitaoorderservice.util.PayHelper;

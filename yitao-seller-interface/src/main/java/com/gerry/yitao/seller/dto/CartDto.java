@@ -1,4 +1,4 @@
-package com.gerry.yitao.dto;
+package com.gerry.yitao.seller.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

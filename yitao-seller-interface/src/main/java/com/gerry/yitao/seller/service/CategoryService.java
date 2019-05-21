@@ -1,4 +1,4 @@
-package com.gerry.yitao.upload.service;
+package com.gerry.yitao.seller.service;
 
 import com.gerry.yitao.domain.Category;
 

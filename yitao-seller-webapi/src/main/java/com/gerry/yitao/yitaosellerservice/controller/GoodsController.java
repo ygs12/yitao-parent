@@ -1,16 +1,19 @@
 package com.gerry.yitao.yitaosellerservice.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
+import com.gerry.yitao.seller.bo.SeckillParameter;
+import com.gerry.yitao.domain.SeckillGoods;
 import com.gerry.yitao.domain.Sku;
 import com.gerry.yitao.domain.Spu;
 import com.gerry.yitao.domain.SpuDetail;
-import com.gerry.yitao.dto.CartDto;
+import com.gerry.yitao.seller.dto.CartDto;
 import com.gerry.yitao.entity.PageResult;
-import com.gerry.yitao.upload.service.GoodsService;
+import com.gerry.yitao.seller.service.GoodsService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.text.ParseException;
 import java.util.List;
 
 /**
@@ -24,7 +27,7 @@ import java.util.List;
 public class GoodsController {
 
 
-    @Reference(check = false)
+    @Reference(check = false,timeout = 60000)
     private GoodsService goodsService;
 
     @GetMapping("spu/page")
@@ -129,5 +132,37 @@ public class GoodsController {
     public ResponseEntity<Void> decreaseStock(@RequestBody List<CartDto> cartDtos){
         goodsService.decreaseStock(cartDtos);
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+    }
+
+    ////////////////////// 秒杀 ///////////////////////////
+    /**
+     * 查询秒杀商品
+     * @return
+     */
+    @GetMapping("/seckill/list")
+    public ResponseEntity<List<SeckillGoods>> querySeckillGoods(){
+        List<SeckillGoods> list = this.goodsService.querySeckillGoods();
+        if (list == null || list.size() < 0){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+        }
+        return ResponseEntity.ok(list);
+    }
+
+    /**
+     * 添加秒杀商品
+     * @param seckillParameters
+     * @return
+     * @throws
+     */
+    @PostMapping("/seckill/add")
+    public ResponseEntity<Boolean> addSeckillGoods(@RequestBody List<SeckillParameter> seckillParameters) throws ParseException {
+        if (seckillParameters != null && seckillParameters.size() > 0){
+            for (SeckillParameter seckillParameter : seckillParameters){
+                this.goodsService.addSeckillGoods(seckillParameter);
+            }
+        }else {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+        return ResponseEntity.ok().build();
     }
 }

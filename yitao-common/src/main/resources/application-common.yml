@@ -14,3 +14,4 @@ yt:
     - /item # 商品详情
     - /api/upload # 图片服务器
     - /api/order
+    - /error

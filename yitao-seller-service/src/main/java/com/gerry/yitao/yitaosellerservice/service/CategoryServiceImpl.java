@@ -4,7 +4,7 @@ import com.alibaba.dubbo.config.annotation.Service;
 import com.gerry.yitao.common.exception.ServiceException;
 import com.gerry.yitao.domain.Category;
 import com.gerry.yitao.mapper.CategoryMapper;
-import com.gerry.yitao.upload.service.CategoryService;
+import com.gerry.yitao.seller.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.CollectionUtils;
 
@@ -14,7 +14,7 @@ import java.util.List;
 /**
  * 商品分类业务类
  */
-@Service(timeout = 3000)
+@Service(timeout = 30000)
 public class CategoryServiceImpl implements CategoryService {
 
     @Autowired

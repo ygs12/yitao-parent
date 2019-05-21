@@ -3,7 +3,7 @@ package com.gerry.yitao.yitaosellerservice.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.gerry.yitao.domain.SpecGroup;
 import com.gerry.yitao.domain.SpecParam;
-import com.gerry.yitao.upload.service.SpecService;
+import com.gerry.yitao.seller.service.SpecService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +20,7 @@ import java.util.List;
 @RequestMapping("api/item/spec")
 public class SpecController {
 
-    @Reference(check = false)
+    @Reference(check = false,timeout = 40000)
     private SpecService specService;
 
 

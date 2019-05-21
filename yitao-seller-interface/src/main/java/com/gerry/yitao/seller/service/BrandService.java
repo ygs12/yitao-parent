@@ -1,6 +1,6 @@
-package com.gerry.yitao.upload.service;
+package com.gerry.yitao.seller.service;
 
-import com.gerry.yitao.bo.BrandBo;
+import com.gerry.yitao.seller.bo.BrandBo;
 import com.gerry.yitao.domain.Brand;
 import com.gerry.yitao.domain.Category;
 import com.gerry.yitao.entity.PageResult;

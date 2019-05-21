@@ -2,8 +2,8 @@ package com.gerry.yitao.yitaosellerservice.controller;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.gerry.yitao.domain.Category;
-import com.gerry.yitao.upload.service.BrandService;
-import com.gerry.yitao.upload.service.CategoryService;
+import com.gerry.yitao.seller.service.BrandService;
+import com.gerry.yitao.seller.service.CategoryService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +19,7 @@ import java.util.List;
 @RequestMapping("api/item/category")
 public class CategoryController {
 
-    @Reference(check = false)
+    @Reference(check = false,timeout = 40000)
     private CategoryService categoryService;
 
     @Reference

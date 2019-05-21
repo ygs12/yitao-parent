@@ -1,13 +1,13 @@
 package com.gerry.yitao.yitaosellerservice.service;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.gerry.yitao.bo.BrandBo;
+import com.gerry.yitao.seller.bo.BrandBo;
 import com.gerry.yitao.common.exception.ServiceException;
 import com.gerry.yitao.domain.Brand;
 import com.gerry.yitao.domain.Category;
 import com.gerry.yitao.entity.PageResult;
 import com.gerry.yitao.mapper.BrandMapper;
-import com.gerry.yitao.upload.service.BrandService;
+import com.gerry.yitao.seller.service.BrandService;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.apache.commons.lang3.StringUtils;
@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * 品牌业务处理类
  */
-@Service(timeout = 3000)
+@Service(timeout = 30000)
 public class BrandServiceImpl implements BrandService {
 
     @Autowired

@@ -1,4 +1,4 @@
-package com.gerry.yitao.bo;
+package com.gerry.yitao.seller.bo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

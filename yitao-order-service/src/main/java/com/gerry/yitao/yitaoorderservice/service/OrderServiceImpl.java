@@ -1,6 +1,8 @@
 package com.gerry.yitao.yitaoorderservice.service;
 
+import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.dubbo.config.annotation.Service;
+import com.codingapi.txlcn.tc.annotation.LcnTransaction;
 import com.gerry.yitao.common.entity.UserInfo;
 import com.gerry.yitao.common.exception.ServiceException;
 import com.gerry.yitao.common.util.IdWorker;
@@ -17,6 +19,7 @@ import com.gerry.yitao.order.service.OrderService;
 import com.gerry.yitao.order.service.PayLogService;
 import com.gerry.yitao.order.status.OrderStatusEnum;
 import com.gerry.yitao.order.status.PayStateEnum;
+import com.gerry.yitao.upload.service.GoodsService;
 import com.gerry.yitao.yitaoorderservice.client.AddressClient;
 import com.gerry.yitao.yitaoorderservice.client.GoodsClient;
 import com.gerry.yitao.yitaoorderservice.util.PayHelper;
@@ -40,7 +43,7 @@ import java.util.stream.Collectors;
  * @Description:
  */
 @Slf4j
-@Service(timeout = 4000)
+@Service(timeout = 40000)
 public class OrderServiceImpl implements OrderService {
     @Autowired
     private OrderMapper orderMapper;
@@ -66,11 +69,21 @@ public class OrderServiceImpl implements OrderService {
     @Autowired
     private PayLogService payLogService;
 
+    /**
+     * dubbo引入LCN框架必须这么使用否则事务不生效
+     */
+    @Reference(
+            timeout = 50000,
+            retries = -1,
+            check = false,
+            registry = "${dubbo.registry.address}")
+    private GoodsService goodsService;
+
     @Autowired
     private AmqpTemplate amqpTemplate;
 
 
-    @Transactional
+    @LcnTransaction
     public Long createOrder(OrderDto orderDto, UserInfo user) {
         //生成订单ID，采用自己的算法生成订单ID
         long orderId = idWorker.nextId();
@@ -117,6 +130,7 @@ public class OrderServiceImpl implements OrderService {
         //填充orderDetail
         List<OrderDetail> orderDetails = new ArrayList<>();
 
+
         //遍历skus，填充orderDetail
         for (Sku sku : skus) {
             // 获取购买商品数量
@@ -158,10 +172,13 @@ public class OrderServiceImpl implements OrderService {
 
         //减库存（1、下订单减库存，2、支付完成后减库存）
         // TODO 需要处理强一致分布式事务
-        goodsClient.decreaseStock(orderDto.getCarts());
+        //goodsClient.decreaseStock(orderDto.getCarts());
+        goodsService.decreaseStock(orderDto.getCarts());
+        /// 模拟操作失败
+        // throw new RuntimeException("模拟操作失败");
 
         //删除购物车中已经下单的商品数据, 采用异步mq的方式通知购物车系统删除已购买的商品，传送商品ID和用户ID
-        HashMap<String, Object> map = new HashMap<>();
+        Map<String, Object> map = new HashMap<>();
 
         try {
             map.put("skuIds", skuNumMap.keySet());

@@ -27,9 +27,12 @@ spring:
         multiplier: 2
       exchange: yt.item.exchange
     publisher-confirms: true
+  application:
+    name: seller-service
 dubbo:
   application:
     name: yitao-seller-service
+    qos-enable: false
   protocol:
     port: 20880
   registry:

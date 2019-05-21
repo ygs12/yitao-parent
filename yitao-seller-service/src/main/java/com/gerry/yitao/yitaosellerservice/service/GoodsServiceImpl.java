@@ -1,6 +1,7 @@
 package com.gerry.yitao.yitaosellerservice.service;
 
 import com.alibaba.dubbo.config.annotation.Service;
+import com.codingapi.txlcn.tc.annotation.LcnTransaction;
 import com.gerry.yitao.common.exception.ServiceException;
 import com.gerry.yitao.domain.*;
 import com.gerry.yitao.dto.CartDto;
@@ -239,8 +240,7 @@ public class GoodsServiceImpl implements GoodsService {
         return skus;
     }
 
-    @Transactional
-    @Override
+    @LcnTransaction
     public void decreaseStock(List<CartDto> cartDtos) {
         for (CartDto cartDto : cartDtos) {
             int count = stockMapper.decreaseStock(cartDto.getSkuId(), cartDto.getNum());

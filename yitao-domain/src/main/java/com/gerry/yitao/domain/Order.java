@@ -44,8 +44,8 @@ public class Order implements Serializable {
     private Integer sourceType = 1;// 订单来源 1:app端，2：pc端，3：M端，4：微信端，5：手机qq端
 
     @Transient
-    private OrderStatus orderStatus;
+    private OrderStatus orderStatus; // 订单状态
 
     @Transient
-    private List<OrderDetail> orderDetails;
+    private List<OrderDetail> orderDetails; // 订单中所有商品详情信息集合
 }

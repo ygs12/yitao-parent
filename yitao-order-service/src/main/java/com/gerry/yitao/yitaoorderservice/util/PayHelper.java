@@ -62,6 +62,13 @@ public class PayHelper {
         this.notifyUrl = payConfig.getNotifyUrl();
     }
 
+    /**
+     * 调用统一下单微信支付接口获取对应支付链接
+     * @param orderId
+     * @param description
+     * @param totalPay
+     * @return
+     */
     public String createPayUrl(Long orderId, String description, Long totalPay) {
         //从缓存中取出支付连接
         String key = "order:pay:url:" + orderId;
@@ -128,6 +135,7 @@ public class PayHelper {
             } catch (Exception e) {
                 log.error("【微信下单】缓存付款链接异常,订单编号：{}", orderId, e);
             }
+
             return url;
         } catch (Exception e) {
             log.error("【微信下单】创建预交易订单异常", e);

@@ -15,7 +15,7 @@ spring:
     url: jdbc:mysql://127.0.0.1:3306/orange?useSSL=false&serverTimezone=UTC
     username: root
   redis:
-    host: 192.168.3.172
+    host: 192.168.3.201
     password: redis-01
   rabbitmq:
     host: 192.168.3.201
@@ -37,7 +37,8 @@ dubbo:
   protocol:
     port: 20886
   registry:
-    address: zookeeper://192.168.3.220:2181?backup=192.168.3.221:2181,192.168.3.222:2181
+    address: zookeeper://192.168.3.201:2181
+#    address: zookeeper://192.168.3.220:2181?backup=192.168.3.221:2181,192.168.3.222:2181
 server:
   port: 7779
 logging:

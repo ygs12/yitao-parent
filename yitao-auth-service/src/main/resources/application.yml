@@ -1,6 +1,4 @@
 spring:
-  redis:
-    host: 192.168.3.172
   rabbitmq:
     virtual-host: /
     username: test
@@ -12,7 +10,7 @@ dubbo:
   protocol:
     port: 20885
   registry:
-    address: zookeeper://192.168.3.220:2181?backup=192.168.3.221:2181,192.168.3.222:2181
+    address: zookeeper://192.168.3.201:2181
 server:
   port: 7781
 yt:

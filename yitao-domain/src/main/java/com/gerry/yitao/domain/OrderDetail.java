@@ -29,7 +29,7 @@ public class OrderDetail implements Serializable {
 
     private String title;// 商品标题
 
-    private Long price;// 商品单价
+    private Double price;// 商品单价
 
     private String ownSpec;// 商品规格数据
 

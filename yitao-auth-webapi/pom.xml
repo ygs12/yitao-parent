@@ -32,4 +32,24 @@
             <artifactId>dubbo-spring-boot-starter</artifactId>
         </dependency>
     </dependencies>
+
+    <build>
+        <finalName>auth-api</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.gerry.yitao.yitaoauthservicewebapi.YitaoAuthWebApplication</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>

@@ -2,7 +2,6 @@ package com.gerry.yitao.yitaoorderservice.service;
 
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.alibaba.dubbo.config.annotation.Service;
-import com.codingapi.txlcn.tc.annotation.LcnTransaction;
 import com.gerry.yitao.common.entity.UserInfo;
 import com.gerry.yitao.common.exception.ServiceException;
 import com.gerry.yitao.common.util.IdWorker;
@@ -83,7 +82,7 @@ public class OrderServiceImpl implements OrderService {
     private AmqpTemplate amqpTemplate;
 
 
-    @LcnTransaction
+    //@LcnTransaction
     public Long createOrder(OrderDto orderDto, UserInfo user) {
         //生成订单ID，采用自己的算法生成订单ID
         long orderId = idWorker.nextId();
@@ -144,15 +143,15 @@ public class OrderServiceImpl implements OrderService {
             orderDetail.setSkuId(sku.getId());
             orderDetail.setTitle(sku.getTitle());
             orderDetail.setNum(num);
-            orderDetail.setPrice(sku.getPrice().longValue());
+            orderDetail.setPrice(sku.getPrice());
             // 获取商品展示第一张图片
             orderDetail.setImage(StringUtils.substringBefore(sku.getImages(), ","));
 
             orderDetails.add(orderDetail);
         }
 
-        order.setActualPay((totalPay.longValue() + order.getPostFee()));  //todo 还要减去优惠金额
-        order.setTotalPay(totalPay.longValue());
+        order.setActualPay((totalPay + order.getPostFee()));  //todo 还要减去优惠金额
+        order.setTotalPay(totalPay);
 
         //保存order
         orderMapper.insertSelective(order);

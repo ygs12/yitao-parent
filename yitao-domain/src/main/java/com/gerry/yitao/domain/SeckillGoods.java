@@ -1,7 +1,7 @@
 package com.gerry.yitao.domain;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
+import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -14,6 +14,7 @@ import java.util.Date;
  * @Description: 秒杀商品类
  */
 @Data
+@ToString
 @Table(name = "tb_seckill_sku")
 public class SeckillGoods implements Serializable {
 
@@ -54,11 +55,18 @@ public class SeckillGoods implements Serializable {
     /**
      * 秒杀库存
      */
-    @JsonIgnore
     @Transient
     private Integer stock;
 
-    @JsonIgnore
+    /**
+     * 原价
+     */
+    @Transient
+    private Double price;
+
+    /**
+     * 秒杀总数
+     */
     @Transient
     private Integer seckillTotal;
 }

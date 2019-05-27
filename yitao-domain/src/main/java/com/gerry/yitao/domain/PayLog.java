@@ -18,7 +18,7 @@ import java.util.Date;
 public class PayLog implements Serializable {
     @Id
     private Long orderId;
-    private Long totalFee;
+    private Double totalFee;
     private Long userId;
     private String transactionId;
     private Integer status;

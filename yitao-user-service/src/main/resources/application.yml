@@ -1,6 +1,6 @@
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
+    driver-class-name: com.mysql.jdbc.Driver
     hikari:
       auto-commit: true
       connection-test-query: SELECT 1
@@ -12,7 +12,7 @@ spring:
       pool-name: DatebookHikariCP
     password: 123
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://127.0.0.1:3306/orange?useSSL=false&serverTimezone=UTC
+    url: jdbc:mysql://192.168.3.121:3306/orange?useSSL=false&serverTimezone=UTC
     username: root
   redis:
     host: 192.168.3.201

@@ -14,5 +14,5 @@ public interface PayLogService {
      * @param orderId
      * @param actualPay
      */
-    void createPayLog(Long orderId, Long actualPay, UserInfo user);
+    void createPayLog(Long orderId, Double actualPay, UserInfo user);
 }

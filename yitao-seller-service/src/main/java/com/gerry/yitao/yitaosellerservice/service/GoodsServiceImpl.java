@@ -1,7 +1,6 @@
 package com.gerry.yitao.yitaosellerservice.service;
 
 import com.alibaba.dubbo.config.annotation.Service;
-import com.codingapi.txlcn.tc.annotation.LcnTransaction;
 import com.gerry.yitao.common.exception.ServiceException;
 import com.gerry.yitao.domain.*;
 import com.gerry.yitao.entity.PageResult;
@@ -253,7 +252,7 @@ public class GoodsServiceImpl implements GoodsService {
         return skus;
     }
 
-    @LcnTransaction
+    // @LcnTransaction
     public void decreaseStock(List<CartDto> cartDtos) {
         for (CartDto cartDto : cartDtos) {
             int count = stockMapper.decreaseStock(cartDto.getSkuId(), cartDto.getNum());
@@ -353,7 +352,9 @@ public class GoodsServiceImpl implements GoodsService {
     @Override
     public List<SeckillGoods> querySeckillGoods() {
         Example example = new Example(SeckillGoods.class);
+        // 可以秒杀
         example.createCriteria().andEqualTo("enable",true);
+
         List<SeckillGoods> list = this.seckillMapper.selectByExample(example);
         list.forEach(goods -> {
             Stock stock = this.stockMapper.selectByPrimaryKey(goods.getSkuId());
@@ -371,7 +372,7 @@ public class GoodsServiceImpl implements GoodsService {
     @Transactional(rollbackFor = Exception.class)
     public void addSeckillGoods(SeckillParameter seckillParameter) throws ParseException {
         SimpleDateFormat sdf =  new SimpleDateFormat( "yyyy-MM-dd HH:mm" );
-        //1.根据spu_id查询商品
+        //1.根据sku_id查询商品
         Long id = seckillParameter.getId();
         Sku sku = this.skuMapper.selectByPrimaryKey(id);
         //2.插入到秒杀商品表中
@@ -387,7 +388,12 @@ public class GoodsServiceImpl implements GoodsService {
         this.seckillMapper.insert(seckillGoods);
         //3.更新对应的库存信息，tb_stock
         Stock stock = stockMapper.selectByPrimaryKey(sku.getId());
-        System.out.println(stock);
+
+        // 判断库存是否充足
+        if (stock.getStock() - seckillGoods.getStock() < 0 ) {
+            throw new ServiceException("参与秒杀的库存不足");
+        }
+
         if (stock != null) {
             stock.setSeckillStock(stock.getSeckillStock() != null ? stock.getSeckillStock() + seckillParameter.getCount() : seckillParameter.getCount());
             stock.setSeckillTotal(stock.getSeckillTotal() != null ? stock.getSeckillTotal() + seckillParameter.getCount() : seckillParameter.getCount());

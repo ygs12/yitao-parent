@@ -29,7 +29,7 @@ public class PayLogServiceImpl implements PayLogService {
     @Autowired
     private PayHelper payHelper;
 
-    public void createPayLog(Long orderId, Long actualPay, UserInfo user) {
+    public void createPayLog(Long orderId, Double actualPay, UserInfo user) {
         //创建支付对象
         PayLog payLog = new PayLog();
         payLog.setStatus(PayStateEnum.NOT_PAY.getValue());

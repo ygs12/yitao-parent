@@ -21,8 +21,8 @@ public class Order implements Serializable {
 
     @Id
     private Long orderId;// id
-    private Long totalPay;// 总金额
-    private Long actualPay;// 实付金额
+    private Double totalPay;// 总金额
+    private Double actualPay;// 实付金额
     private Integer paymentType; // 支付类型，1、在线支付，2、货到付款
     private String promotionIds; // 参与促销活动的id
     private Long postFee = 0L;// 邮费 实际项目中应该根据具体地点生成具体邮费

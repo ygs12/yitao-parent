@@ -33,6 +33,13 @@ public class SeckillGoods implements Serializable {
      * 秒杀结束时间
      */
     private Date endTime;
+
+    /**
+     * 获取服务端当前时间
+     */
+    @Transient
+    private Date currentTime;
+
     /**
      * 秒杀价格
      */

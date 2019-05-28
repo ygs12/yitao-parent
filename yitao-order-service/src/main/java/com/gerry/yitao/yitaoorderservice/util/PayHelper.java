@@ -7,6 +7,7 @@ import com.gerry.yitao.domain.PayLog;
 import com.gerry.yitao.mapper.OrderMapper;
 import com.gerry.yitao.mapper.OrderStatusMapper;
 import com.gerry.yitao.mapper.PayLogMapper;
+import com.gerry.yitao.order.service.OrderService;
 import com.gerry.yitao.order.status.OrderStatusEnum;
 import com.gerry.yitao.order.status.PayStateEnum;
 import com.gerry.yitao.yitaoorderservice.config.WxPayConfig;
@@ -71,7 +72,7 @@ public class PayHelper {
      */
     public String createPayUrl(Long orderId, String description, Long totalPay) {
         //从缓存中取出支付连接
-        String key = "order:pay:url:" + orderId;
+        String key = OrderService.KEY_PAY_PREFIX + orderId;
         try {
             String url = redisTemplate.opsForValue().get(key);
             if (StringUtils.isNotBlank(url)) {
@@ -219,6 +220,11 @@ public class PayHelper {
         orderStatus1.setStatus(OrderStatusEnum.PAY_UP.value());
         orderStatus1.setOrderId(order.getOrderId());
         orderStatus1.setPaymentTime(new Date());
+
+        // 删除支付链接
+        String key = OrderService.KEY_PAY_PREFIX+order.getOrderId();
+        redisTemplate.delete(key);
+
         statusMapper.updateByPrimaryKeySelective(orderStatus1);
     }
 

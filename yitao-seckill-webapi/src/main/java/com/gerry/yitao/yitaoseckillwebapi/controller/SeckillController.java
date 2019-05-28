@@ -9,6 +9,8 @@ import com.gerry.yitao.seckill.dto.SeckillDTO;
 import com.gerry.yitao.seckill.service.SeckillService;
 import com.gerry.yitao.seckill.utils.ImageUtil;
 import com.gerry.yitao.yitaoseckillwebapi.entity.SecKillParam;
+import com.gerry.yitao.yitaoseckillwebapi.entity.StockParam;
+import com.gerry.yitao.yitaoseckillwebapi.ex.StockException;
 import com.gerry.yitao.yitaoseckillwebapi.filter.LoginInterceptor;
 import com.gerry.yitao.yitaoseckillwebapi.limiting.AccessLimiter;
 import org.springframework.beans.factory.InitializingBean;
@@ -16,7 +18,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.BoundHashOperations;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -25,9 +26,9 @@ import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletResponse;
 import java.awt.image.BufferedImage;
 import java.io.OutputStream;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @ProjectName: yitao-parent
@@ -48,13 +49,15 @@ public class SeckillController implements InitializingBean {
     private RedisTemplate redisTemplate;
 
     //
-    private Map<Long,Boolean> localOverMap = new HashMap<>();
+    private Map<Long,Boolean> localOverMap = new ConcurrentHashMap<>();
+
+
 
     @Override
     public void afterPropertiesSet() throws Exception {
         //1.查询可以秒杀的商品
         BoundHashOperations<String,Object,Object> hashOperations = this.stringRedisTemplate.boundHashOps(SeckillService.KEY_PREFIX_STOCK);
-        System.out.println(hashOperations.getKey());
+
         if (hashOperations.getKey().equals(SeckillService.KEY_PREFIX_STOCK)){
             hashOperations.entries().forEach((m,n) -> localOverMap.put(Long.parseLong(m.toString()),false));
         }
@@ -86,42 +89,60 @@ public class SeckillController implements InitializingBean {
             return Result.error(CodeMsg.MIAO_SHA_OVER);
         }
 
-        //3.读取库存，减一后更新缓存
-        BoundHashOperations<String,Object,Object> hashOperations = stringRedisTemplate.boundHashOps(SeckillService.KEY_PREFIX_STOCK);
-        Long stock = hashOperations.increment(goodsId.toString(), -1);
-        //3.1 更新缓存的商品信息库存
-        BoundHashOperations<String,Object,Object> goodsOps = redisTemplate.boundHashOps(SeckillService.KEY_PREFIX_GOODS);
-        seckillGoods.setStock(seckillGoods.getStock() - 1);
-        goodsOps.put(goodsId,seckillGoods);
-
-        //4.库存不足直接返回
-        if (stock < 0){
-            localOverMap.put(goodsId,true);
-            return Result.error(CodeMsg.MIAO_SHA_OVER);
-        }
-
         //5. 判断是否已经重复秒杀
-        Long result = seckillService.checkSeckillOrder(userInfo.getId());
+        Long result = seckillService.checkSeckillOrder(goodsId,userInfo.getId());
         if(result != null) {
             return Result.error(CodeMsg.REPEATE_MIAOSHA);
         }
 
-        //6.库存充足，请求入队
-        //6.1 获取用户信息
-        SeckillDTO dto = new SeckillDTO(userInfo,seckillGoods);
+        // AOP ， 异常拦截器
+        // 创建库存对象
+        StockParam param = new StockParam();
 
-        //6.2 发送消息
-        seckillService.sendMessage(dto);
+        try {
+            //3.读取库存，减一后更新缓存
+            BoundHashOperations<String,Object,Object> hashOperations = stringRedisTemplate.boundHashOps(SeckillService.KEY_PREFIX_STOCK);
+            Long stock = hashOperations.increment(goodsId.toString(), -1);
+            param.setStock(stock + 1);
+            param.setGoodsId(goodsId);
+
+            //3.1 更新缓存的商品信息库存
+            BoundHashOperations<String,Object,Object> goodsOps = redisTemplate.boundHashOps(SeckillService.KEY_PREFIX_GOODS);
+            //TODO JUC => ThreadLocale // 线程安全
+            seckillGoods.setStock(seckillGoods.getStock() - 1);
+            goodsOps.put(goodsId,seckillGoods);
+
+
+
+            //4.库存不足直接返回
+            if (stock < 0){
+                localOverMap.put(goodsId,true);
+                //TODO 缓存中商品要不要干掉？（异步下单处理中已经处理啦）
+                return Result.error(CodeMsg.MIAO_SHA_OVER);
+            }
+
+            // 测试异常出现是否回滚补偿
+            //throw new RuntimeException("ffddfd");
+
+            //6.库存充足，请求入队
+            //6.1 获取用户信息
+            SeckillDTO dto = new SeckillDTO(userInfo,seckillGoods);
+
+            //6.2 发送消息
+            seckillService.sendMessage(dto);
+        } catch (Exception e) {
+            throw new StockException(param, "秒杀减库存出现异常");
+        }
 
         return Result.success(0);
     }
 
     /**
-     * 获取秒杀路径
+     * 获取秒杀路径()
      * @param secKillParam
      * @return
      */
-    @AccessLimiter(seconds = 20,maxCount = 5,needLogin = true)
+    @AccessLimiter(seconds = 5,maxCount = 5,needLogin = true)
     @PostMapping("getPath")
     @ResponseBody
     public Result<String> getSecKillPath(@RequestBody SecKillParam secKillParam){
@@ -136,7 +157,9 @@ public class SeckillController implements InitializingBean {
             return Result.error(CodeMsg.REQUEST_ILLEGAL);
         }
 
+        // 获取秒杀的地址组成可变部分
         String path = seckillService.createPath(goodsId,userInfo.getId());
+
         return Result.success(path);
     }
 
@@ -160,16 +183,19 @@ public class SeckillController implements InitializingBean {
     /**
      * 根据userId查询秒杀订单号
      *
-     * @param userId
+     * @param goodsId
      * @return 前端轮询判断是否秒杀成功
      */
     @GetMapping("result")
     @ResponseBody
-    public ResponseEntity<Long> checkSeckillOrder(Long userId){
-        Long result = seckillService.checkSeckillOrder(userId);
+    public ResponseEntity<Long> checkSeckillOrder(@RequestParam("goodsId") Long goodsId) {
+        UserInfo userInfo = LoginInterceptor.getLoginUser();
+        Long result = seckillService.checkSeckillOrder(goodsId,userInfo.getId());
+
         if (result == null){
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
+            return ResponseEntity.ok(-1L);
         }
+
         return ResponseEntity.ok(result);
 
     }

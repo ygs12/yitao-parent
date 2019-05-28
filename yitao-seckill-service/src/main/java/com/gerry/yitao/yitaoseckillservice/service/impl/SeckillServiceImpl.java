@@ -69,6 +69,7 @@ public class SeckillServiceImpl implements SeckillService {
     @Override
     public void sendMessage(SeckillDTO seckillDTO) {
         String json = JsonUtils.toString(seckillDTO);
+
         try {
             this.amqpTemplate.convertAndSend("order.seckill", json);
         }catch (Exception e){
@@ -82,13 +83,15 @@ public class SeckillServiceImpl implements SeckillService {
      * @return
      */
     @Override
-    public Long checkSeckillOrder(Long userId) {
+    public Long checkSeckillOrder(Long goodsId, Long userId) {
         Example example = new Example(SeckillOrder.class);
-        example.createCriteria().andEqualTo("userId",userId);
+        example.createCriteria().andEqualTo("userId",userId).andEqualTo("skuId", goodsId);
         List<SeckillOrder> seckillOrders = seckillOrderMapper.selectByExample(example);
+
         if (seckillOrders == null || seckillOrders.size() == 0){
             return null;
         }
+
         return seckillOrders.get(0).getOrderId();
     }
 
@@ -156,6 +159,7 @@ public class SeckillServiceImpl implements SeckillService {
         //把验证码存到redis中
         int rnd = calc(verifyCode);
         stringRedisTemplate.opsForValue().set(SeckillService.KEY_PREFIX_VERIFY+"_"+user.getId()+","+goodsId, rnd+"");
+        stringRedisTemplate.expire(SeckillService.KEY_PREFIX_VERIFY+"_"+user.getId()+","+goodsId,1,TimeUnit.MINUTES);
         //输出图片
         return ImageUtil.imageToBytes(image,"JPEG");
     }
@@ -172,6 +176,7 @@ public class SeckillServiceImpl implements SeckillService {
         if(codeOld == null || codeOld - verifyCode != 0 ) {
             return false;
         }
+        // 删除验证码
         stringRedisTemplate.delete(SeckillService.KEY_PREFIX_VERIFY+"_"+user.getId()+","+goodsId);
 
         return true;
@@ -248,7 +253,10 @@ public class SeckillServiceImpl implements SeckillService {
     public SeckillGoods queryGoodsInfoFormCache(Long goodsId) {
         // 获取缓存中获取Hash
         BoundHashOperations boundHashOps = this.redisTemplate.boundHashOps(KEY_PREFIX_GOODS);
+        Date currentDate = new Date();
+        SeckillGoods seckillGoods = (SeckillGoods) boundHashOps.get(goodsId);
+        seckillGoods.setCurrentTime(currentDate);
 
-        return (SeckillGoods) boundHashOps.get(goodsId);
+        return seckillGoods;
     }
 }

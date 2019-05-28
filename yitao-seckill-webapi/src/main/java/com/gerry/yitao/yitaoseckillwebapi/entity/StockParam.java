@@ -5,11 +5,11 @@ import lombok.Data;
 /**
  * @ProjectName: yitao-parent
  * @Auther: GERRY
- * @Date: 2019/5/27 14:54
+ * @Date: 2019/5/28 21:19
  * @Description:
  */
 @Data
-public class SecKillParam {
+public class StockParam {
     private Long goodsId;
-    private Integer verifyCode = 0;
+    private Long stock;
 }

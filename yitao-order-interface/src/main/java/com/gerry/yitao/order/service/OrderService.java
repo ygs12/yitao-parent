@@ -14,6 +14,9 @@ import java.util.Map;
  * @Description: 订单服务接口
  */
 public interface OrderService {
+
+    String KEY_PAY_PREFIX = "order:pay:url:";
+
     /**
      * 创建订单
      * @param orderDto

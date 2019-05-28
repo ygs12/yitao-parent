@@ -30,7 +30,7 @@ public interface SeckillService {
      * @param userId
      * @return
      */
-    Long checkSeckillOrder(Long userId);
+    Long checkSeckillOrder(Long goodsId, Long userId);
 
 
     /**

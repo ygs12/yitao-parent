@@ -52,7 +52,7 @@
         <lombok-version>1.18.6</lombok-version>
         <curator-version>2.12.0</curator-version>
         <fastjson-version>1.2.46</fastjson-version>
-        <jackson-verison>2.9.8</jackson-verison>
+        <jackson-verison>2.9.10.3</jackson-verison>
         <springfox-swagger-version>2.9.2</springfox-swagger-version>
         <netty-version>4.1.30.Final</netty-version>
         <jedis-version>2.9.0</jedis-version>

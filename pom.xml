@@ -48,7 +48,7 @@
         <dubbo-starter-version>0.2.0</dubbo-starter-version>
         <spring-boot-mybtis-version>1.3.2</spring-boot-mybtis-version>
         <tk-mybatis-version>2.0.4</tk-mybatis-version>
-        <mysql-version>5.1.38</mysql-version>
+        <mysql-version>8.0.28</mysql-version>
         <lombok-version>1.18.6</lombok-version>
         <curator-version>2.12.0</curator-version>
         <fastjson-version>1.2.46</fastjson-version>
